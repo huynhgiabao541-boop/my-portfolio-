@@ -146,11 +146,11 @@
   <!-- Navigation -->
   <header class="fixed top-0 inset-x-0 z-50 glass-nav">
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-2 font-mono font-bold text-sm tracking-wide">
+      <div class="flex items-center gap-2 font-mono font-bold text-base tracking-wide">
         <div class="w-2 h-2 rounded-full bg-brand-cyan shadow-[0_0_8px_#22d3ee]"></div>
         <span class="text-slate-900 dark:text-white">huynhgiabao</span><span class="text-slate-500">.dev</span>
       </div>
-      <nav class="hidden md:flex items-center gap-8 font-mono text-sm text-slate-600 dark:text-slate-400">
+      <nav class="hidden md:flex items-center gap-8 font-mono text-base text-slate-600 dark:text-slate-400">
         <a href="#about" class="hover:text-brand-cyan transition-colors">Về tôi</a>
         <a href="#education" class="hover:text-brand-cyan transition-colors">Học vấn</a>
         <a href="#experience" class="hover:text-brand-cyan transition-colors">Kinh nghiệm</a>
@@ -181,9 +181,8 @@
         <div
           class="absolute inset-0 bg-white/50 dark:bg-white/10 backdrop-blur-md border border-white/80 dark:border-white/20 rounded-full shadow-lg z-10 flex flex-col items-center justify-center overflow-hidden">
           <!-- TODO: Thay thế "avatar.jpg" bằng tên file ảnh của bạn (VD: my-photo.png) -->
-          <img
-            src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/482029458_2469570630053863_8634627401507065921_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s960x960&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=rjlSlI1nfTUQ7kNvwFgietD&_nc_oc=AdpABxRMeYNkSaIa8qVsKpNanU_wo2nEEgUM5Qy4bo1os8jS9C9fNkBfuj1tW2_O3X4&_nc_zt=23&_nc_ht=scontent.fsgn5-11.fna&_nc_gid=VJWnqwunEKHvu71NRu5ung&_nc_ss=7b2a8&oh=00_AQKFvH5rnR-91jFeFWo36UZysaPYJXMFhLB-s-G5HvfCFA&oe=6AA98524"
-            alt="Huỳnh Gia Bảo" class="w-full h-full object-cover"
+          <img src="482029458_2469570630053863_8634627401507065921_n.jpg" alt="Huỳnh Gia Bảo"
+            class="w-full h-full object-cover"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           <i class="ph-fill ph-user text-5xl text-slate-400 dark:text-slate-400 mb-1 hidden"></i>
         </div>
@@ -213,6 +212,10 @@
         <a href="#projects"
           class="px-6 py-3 rounded-xl bg-brand-cyan text-white dark:text-slate-950 font-bold hover:bg-cyan-500 dark:hover:bg-cyan-300 hover:scale-105 transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center gap-2">
           Xem Dự Án <i class="ph-bold ph-arrow-right"></i>
+        </a>
+        <a href="Huynh-Gia-Bao-TopCV.vn-210826.113057.pdf" download="Huynh-Gia-Bao-Backend.pdf"
+          class="px-6 py-3 rounded-xl bg-white/60 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 text-slate-700 dark:text-slate-200 font-bold hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all flex items-center gap-2">
+          Tải CV <i class="ph-bold ph-download-simple"></i>
         </a>
         <a href="https://www.facebook.com/nhunuococ.man.3/" target="_blank"
           class="w-12 h-12 rounded-xl bg-white/60 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all">
@@ -244,15 +247,16 @@
 
           <div class="md:w-1/4 shrink-0 relative z-10">
             <span
-              class="font-mono text-sm text-brand-cyan bg-brand-cyan/5 dark:bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">10/2022
+              class="font-mono text-base text-brand-cyan bg-brand-cyan/5 dark:bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">10/2022
               - 11/2026</span>
           </div>
           <div class="relative z-10 space-y-3">
             <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Engineering</h3>
-            <p class="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-sm">FPT University</p>
+            <p class="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-base">FPT University</p>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
               Điểm trung bình (GPA): <strong class="text-slate-800 dark:text-slate-200">7.3/10</strong>.<br>
-              Chuyên ngành Kỹ thuật Phần mềm, được đào tạo bài bản về kiến trúc phần mềm, cơ sở dữ liệu, và quy trình phát triển dự án.
+              Chuyên ngành Kỹ thuật Phần mềm, được đào tạo bài bản về kiến trúc phần mềm, cơ sở dữ liệu, và quy trình
+              phát triển dự án.
             </p>
           </div>
         </div>
@@ -278,12 +282,12 @@
 
           <div class="md:w-1/4 shrink-0 relative z-10">
             <span
-              class="font-mono text-sm text-brand-cyan bg-brand-cyan/5 dark:bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">04/2025
+              class="font-mono text-base text-brand-cyan bg-brand-cyan/5 dark:bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">04/2025
               - Nay</span>
           </div>
           <div class="relative z-10 space-y-3">
             <h3 class="text-xl font-bold text-slate-900 dark:text-white">Backend & Frontend Developer</h3>
-            <p class="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-sm">T.A Technical Consulting Co., Ltd.
+            <p class="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-base">T.A Technical Consulting Co., Ltd.
             </p>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
               Thiết kế & phát triển hệ thống Web/API (E-commerce, quản lý, hạ tầng giao thông) với Node.js (TypeScript),
@@ -297,12 +301,12 @@
           class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-12 relative overflow-hidden group">
           <div class="md:w-1/4 shrink-0 relative z-10">
             <span
-              class="font-mono text-sm text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-white/5 px-3 py-1 rounded-full border border-slate-200 dark:border-white/10">12/2024
+              class="font-mono text-base text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-white/5 px-3 py-1 rounded-full border border-slate-200 dark:border-white/10">12/2024
               - 04/2025</span>
           </div>
           <div class="relative z-10 space-y-3">
             <h3 class="text-xl font-bold text-slate-900 dark:text-white">Backend Intern</h3>
-            <p class="text-slate-500 dark:text-slate-400 font-mono text-sm">Amazing Technology Solutions</p>
+            <p class="text-slate-500 dark:text-slate-400 font-mono text-base">Amazing Technology Solutions</p>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
               Xây dựng hệ thống Production & QA/QC cho nhà máy may mặc: backend services với .NET Core, Microservices,
               Clean Architecture; tối ưu SQL cho dữ liệu thời gian thực; số hoá quy trình, giảm sai sót thủ công.
@@ -332,13 +336,18 @@
             </div>
             <div class="relative z-10 flex flex-col h-full">
               <div class="flex justify-between items-start mb-4">
-                <h3 class="font-bold text-xl text-slate-900 dark:text-white">SEAL System</h3>
+                <h3 class="font-bold text-xl text-slate-900 dark:text-white flex items-center gap-2 flex-wrap">
+                  SEAL System
+                  <span class="px-2 py-0.5 rounded bg-gradient-to-r from-brand-cyan to-blue-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">
+                    <i class="ph-fill ph-star"></i> Dự án trọng điểm
+                  </span>
+                </h3>
                 <div
                   class="w-8 h-8 rounded-lg bg-brand-cyan/10 dark:bg-brand-cyan/20 flex items-center justify-center border border-brand-cyan/30 dark:border-brand-cyan/50 text-brand-cyan shrink-0">
                   <i class="ph-fill ph-trophy"></i>
                 </div>
               </div>
-              <p class="text-brand-cyan text-xs font-mono mb-3">Project Leader · Backend</p>
+              <p class="text-brand-cyan text-sm font-mono mb-3">Project Leader · Backend</p>
               <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
                 Hệ thống quản lý giải đấu học thuật. Quản lý phân quyền đa vai trò, xử lý khiếu nại. Tối ưu SQL Server
                 cho cấu trúc giải đấu phức tạp.
@@ -366,7 +375,7 @@
                 <i class="ph-bold ph-arrow-up-right"></i>
               </a>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend · Frontend</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend · Frontend</p>
             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
               Hệ thống quản lý bán lẻ ERP. Phân tích codebase & luồng dữ liệu, viết GraphQL queries/mutations, quản lý
               Authorization.
@@ -391,7 +400,7 @@
                 <i class="ph-bold ph-arrow-up-right"></i>
               </a>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend</p>
             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
               Hệ thống mượn/trả sách. Dùng EF Core & FluentValidation. Tích hợp Hangfire xử lý background (cập nhật quá
               hạn sách).
@@ -418,7 +427,7 @@
                 <i class="ph-bold ph-arrow-up-right"></i>
               </a>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend</p>
             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
               Số hoá báo cáo sự cố hạ tầng. Xuất PDF/Excel/Word, xử lý ảnh (Sharp), lưu trữ AWS S3. Quản lý qua Prisma
               ORM.
@@ -440,18 +449,25 @@
           <div class="relative z-10 flex flex-col h-full">
             <div class="flex justify-between items-start mb-4">
               <h3 class="font-bold text-xl text-slate-900 dark:text-white">Rhymo</h3>
-              <div class="w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-white/10 flex items-center justify-center border border-slate-300/50 dark:border-white/20 text-slate-600 dark:text-slate-300 shrink-0">
+              <div
+                class="w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-white/10 flex items-center justify-center border border-slate-300/50 dark:border-white/20 text-slate-600 dark:text-slate-300 shrink-0">
                 <i class="ph-bold ph-music-notes"></i>
               </div>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend</p>
             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
-              Game học âm nhạc tương tác. Tích hợp Groq API tự động sinh câu hỏi bằng AI. Quản lý tiến độ học người chơi, hệ thống cảnh báo. Triển khai CI/CD.
+              Game học âm nhạc tương tác. Tích hợp Groq API tự động sinh câu hỏi bằng AI. Quản lý tiến độ học người
+              chơi, hệ thống cảnh báo. Triển khai CI/CD.
             </p>
             <div class="flex flex-wrap gap-2 mt-auto">
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">.NET Core</span>
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Groq API</span>
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Docker</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">.NET
+                Core</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Groq
+                API</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Docker</span>
             </div>
           </div>
         </div>
@@ -460,18 +476,25 @@
           <div class="relative z-10 flex flex-col h-full">
             <div class="flex justify-between items-start mb-4">
               <h3 class="font-bold text-xl text-slate-900 dark:text-white">Production & QA/QC</h3>
-              <div class="w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-white/10 flex items-center justify-center border border-slate-300/50 dark:border-white/20 text-slate-600 dark:text-slate-300 shrink-0">
+              <div
+                class="w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-white/10 flex items-center justify-center border border-slate-300/50 dark:border-white/20 text-slate-600 dark:text-slate-300 shrink-0">
                 <i class="ph-bold ph-factory"></i>
               </div>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend Intern</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend Intern</p>
             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
-              Hệ thống quản lý sản xuất nhà máy may. Áp dụng Microservices & Clean Architecture. Quản lý quy trình sản xuất và dữ liệu QA/QC theo thời gian thực.
+              Hệ thống quản lý sản xuất nhà máy may. Áp dụng Microservices & Clean Architecture. Quản lý quy trình sản
+              xuất và dữ liệu QA/QC theo thời gian thực.
             </p>
             <div class="flex flex-wrap gap-2 mt-auto">
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">.NET Core</span>
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Microservices</span>
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">SQL Server</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">.NET
+                Core</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Microservices</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">SQL
+                Server</span>
             </div>
           </div>
         </div>
@@ -548,7 +571,7 @@
       <div class="text-center md:text-left">
         <div class="font-bold text-slate-900 dark:text-white mb-2">Học vấn</div>
         <p class="text-slate-600 dark:text-slate-400 text-sm">FPT University — Software Engineering</p>
-        <p class="text-slate-500 font-mono text-xs mt-1">10/2022 - Dự kiến 11/2026 • GPA: 7.3</p>
+        <p class="text-slate-500 font-mono text-sm mt-1">10/2022 - Dự kiến 11/2026 • GPA: 7.3</p>
       </div>
 
       <div class="flex flex-col md:flex-row gap-6 text-sm">
