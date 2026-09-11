@@ -1,3 +1,169 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+# File Summary
+
+## Purpose
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+
+## File Format
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  a. A header with the file path (## File: path/to/file)
+  b. The full contents of the file in a code block
+
+## Usage Guidelines
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+
+## Notes
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+
+# Directory Structure
+```
+.codegraph/
+  .gitignore
+Huynh-Gia-Bao-TopCV.vn-210826.113057.md
+index.html
+```
+
+# Files
+
+## File: Huynh-Gia-Bao-TopCV.vn-210826.113057.md
+```markdown
+<!-- Start of picture text -->
+Huỳnh Gia Bảo<br>Backend Developer (NodeJS, React, .NET)<br><!-- End of picture text -->
+
+#  0936993764 ✉ Huynhgiabao541@gmail.com  facebook.com/h.gia.bao.370673  Linh Xuan, Thu Duc, TpHCM 
+
+Backend Developer with over 1 year of experience in system development using .NET Core and Node.js. Strong expertise in SQL database design and optimization. Directly involved in building large-scale management systems, including technical document management software for state agencies and library management systems for religious organizations. 
+
+
+
+<!-- Start of picture text -->
+EDUCATION<br>FPT University<br><!-- End of picture text -->
+
+10/2022 - Dự kiến 11/2026 
+
+Software Engineering GPA: 7.3/10 
+
+
+
+<!-- Start of picture text -->
+WORK EXPERIENCE<br>Amazing Technology Solutions Company Limited<br>Backend Intern<br><!-- End of picture text -->
+
+12/2024 - 04/2025 
+
+- Development of Production & QA/QC Management System for Garment Factory: Implemented backend services (.NET Core, Microservices, Clean Architecture) and optimized SQL databases for real-time data storage; helped digitize end-to-end workflows and minimized human errors compared to manual processes. 
+
+04/2025 - 08/2026 
+
+Participated in designing and developing Web/API systems (E-commerce, Management, Traffic Infrastructure) using Node.js (TypeScript), .NET Core, ReactJS, and PostgreSQL. 
+
+Applied Clean Architecture, CQRS, and GraphQL, integrated Cloud Services (AWS S3, Firebase), and automated report processing and background tasks, ensuring high scalability and enterprise-grade performance. 
+
+
+
+<!-- Start of picture text -->
+SKILLS<br>Backend<br>DevOps / Deployment<br>Frontend<br>Databases<br>Tools<br>Soft Skills<br><!-- End of picture text -->
+
+|.NET (C#), Node.js (Express/NestJS), RESTful API.|
+|---|
+|Docker, Portainer, Jenkins, Cloud Server (VPS), CI/CD.|
+|React, Tailwind CSS, Vite|
+|SQL Server, MySQL, PostgreSQL|
+|Visual Studio, VS Code, Git/GitHub, Postman.|
+|Teamwork, Presentation Skills, Problem Solving.|
+
+
+
+
+
+<!-- Start of picture text -->
+PROJECTS<br>Task24h - Retail Management Platform (Backend - Frontend)<br>Backend - Frontend<br><!-- End of picture text -->
+
+- 
+
+• Took over and maintained a retail management system based on Client-Server architecture using ReactJS, Redux, Apollo Client, Node.js/Express, PostgreSQL, and Hasura GraphQL. 
+
+- Analyzed codebases and data flows to fix bugs, handle Frontend/Backend change requests, resolve business logic issues, manage JWT authorization, write GraphQL queries/mutations, and optimize database operations. Maintained integrations with Email, Google Cloud Storage, and Firebase to ensure system stability and scalability. 
+
+- Link: https://erp.task24h.com/ 
+
+- 
+
+- Deployed and maintained a system based on Microservices architecture and applied Clean Architecture. Utilized .NET Core to manage manufacturing workflows and QA/QC data, alongside SQL to query, update, and process testing history and order status. 
+
+- Conducted analysis, bug fixes, and change requests across existing services, helping digitize end-to-end production-to-testing workflows and maintaining overall system stability. 
+
+- 
+
+- Developed the Backend system for library borrowing and returning workflows using .NET 10 / C#, adhering to Clean Architecture and the CQRS pattern for maintainable and scalable code. Built RESTful APIs to handle core business logic, including CRUD for Orders, Books, Translators, and Series. Used Entity Framework Core for database interaction and FluentValidation for input validation. 
+
+- Integrated Hangfire for background job processing, such as auto-updating loan statuses and checking overdue books. Organized the codebase using a feature-based structure separating Command and Query flows, ensuring precise business logic handling and code maintainability. 
+
+- Link: https://thuvienxaloiphat.vn 
+
+- 
+
+- Developed Backend RESTful APIs using Node.js / TypeScript to digitize traffic infrastructure incident reporting and repair/maintenance progress tracking. Used Hapi.js to build APIs and hapi-swagger for API documentation. Designed and managed the PostgreSQL database via Prisma ORM to ensure data consistency for entities like Incidents and Task Items. 
+
+- Created modules for data aggregation and report export in PDF, Excel, and Word formats using pdfkit, exceljs, and docx. Integrated Sharp for image processing, AWS S3 for file storage, and JWT for authentication and role-based access control. The system automated field inspection reports and helped management track incident resolution progress. 
+
+- Link: https://xn2.caupha.net 
+
+- 
+
+- Developed the Backend system using C# / .NET Core to manage player data, learning progress, and question banks for a music learning game based on Clean Architecture (Domain, Application, and Infrastructure layers) for separation of concerns and scalability. 
+
+- Integrated Groq API to build automated LLM question generation workflows with Rate Limiting to optimize API performance. Developed Question Bank management supporting Multiple Choice and Multi-Select formats, alongside a Final Results System for performance tracking. 
+
+- Built Notification and Early Warning features for player engagement. Utilized Docker for containerization and Jenkins CI/CD for automated build and deployment, delivering stable APIs and automated AI content generation. 
+
+- 
+
+- Served as Project Leader, guiding the development team using .NET Core, Clean Architecture, and CQRS with MediatR to ensure clean, maintainable, and scalable code. 
+
+- Developed core modules including Authentication & Authorization, user registration/login, User, School, and Event management, User Rejection history, and Appeal processing workflows. Designed and optimized the SQL Server database to support complex tournament structures, multi-role access control, and data status tracking. 
+
+- Assigned tasks, conducted code reviews, and provided technical support to team members. Led the team to successfully digitize the entire competition workflow—from registration to dispute resolution—improving transparency and minimizing manual errors.
+```
+
+## File: .codegraph/.gitignore
+```
+# CodeGraph data files
+# These are local to each machine and should not be committed
+
+# Database
+*.db
+*.db-wal
+*.db-shm
+
+# Cache
+cache/
+
+# Logs
+*.log
+
+# Hook markers
+.dirty
+```
+
+## File: index.html
+```html
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
 
@@ -152,7 +318,6 @@
       </div>
       <nav class="hidden md:flex items-center gap-8 font-mono text-sm text-slate-600 dark:text-slate-400">
         <a href="#about" class="hover:text-brand-cyan transition-colors">Về tôi</a>
-        <a href="#education" class="hover:text-brand-cyan transition-colors">Học vấn</a>
         <a href="#experience" class="hover:text-brand-cyan transition-colors">Kinh nghiệm</a>
         <a href="#projects" class="hover:text-brand-cyan transition-colors">Dự án</a>
         <a href="#skills" class="hover:text-brand-cyan transition-colors">Kỹ năng</a>
@@ -222,40 +387,6 @@
           class="w-12 h-12 rounded-xl bg-white/60 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all">
           <i class="ph-fill ph-envelope-simple text-xl"></i>
         </a>
-      </div>
-    </section>
-
-    <!-- Học Vấn (Education) -->
-    <section id="education" class="space-y-12 relative z-10">
-      <div class="flex items-center gap-4">
-        <div
-          class="w-10 h-10 rounded-lg bg-brand-cyan/10 dark:bg-brand-cyan/20 flex items-center justify-center border border-brand-cyan/20 dark:border-brand-cyan/30 text-brand-cyan">
-          <i class="ph-fill ph-graduation-cap text-xl"></i>
-        </div>
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Học vấn</h2>
-      </div>
-
-      <div class="space-y-6">
-        <div
-          class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-12 relative overflow-hidden group">
-          <div
-            class="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 blur-3xl rounded-full z-0 pointer-events-none group-hover:bg-brand-cyan/20 transition-all">
-          </div>
-
-          <div class="md:w-1/4 shrink-0 relative z-10">
-            <span
-              class="font-mono text-sm text-brand-cyan bg-brand-cyan/5 dark:bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">10/2022
-              - 11/2026</span>
-          </div>
-          <div class="relative z-10 space-y-3">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Engineering</h3>
-            <p class="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-sm">FPT University</p>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-              Điểm trung bình (GPA): <strong class="text-slate-800 dark:text-slate-200">7.3/10</strong>.<br>
-              Chuyên ngành Kỹ thuật Phần mềm, được đào tạo bài bản về kiến trúc phần mềm, cơ sở dữ liệu, và quy trình phát triển dự án.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -436,46 +567,6 @@
           </div>
         </div>
 
-        <div class="glass-card rounded-2xl p-6 h-full flex flex-col relative overflow-hidden group">
-          <div class="relative z-10 flex flex-col h-full">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="font-bold text-xl text-slate-900 dark:text-white">Rhymo</h3>
-              <div class="w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-white/10 flex items-center justify-center border border-slate-300/50 dark:border-white/20 text-slate-600 dark:text-slate-300 shrink-0">
-                <i class="ph-bold ph-music-notes"></i>
-              </div>
-            </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend</p>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
-              Game học âm nhạc tương tác. Tích hợp Groq API tự động sinh câu hỏi bằng AI. Quản lý tiến độ học người chơi, hệ thống cảnh báo. Triển khai CI/CD.
-            </p>
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">.NET Core</span>
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Groq API</span>
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Docker</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="glass-card rounded-2xl p-6 h-full flex flex-col relative overflow-hidden group">
-          <div class="relative z-10 flex flex-col h-full">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="font-bold text-xl text-slate-900 dark:text-white">Production & QA/QC</h3>
-              <div class="w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-white/10 flex items-center justify-center border border-slate-300/50 dark:border-white/20 text-slate-600 dark:text-slate-300 shrink-0">
-                <i class="ph-bold ph-factory"></i>
-              </div>
-            </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend Intern</p>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
-              Hệ thống quản lý sản xuất nhà máy may. Áp dụng Microservices & Clean Architecture. Quản lý quy trình sản xuất và dữ liệu QA/QC theo thời gian thực.
-            </p>
-            <div class="flex flex-wrap gap-2 mt-auto">
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">.NET Core</span>
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Microservices</span>
-              <span class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">SQL Server</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -601,3 +692,4 @@
 </body>
 
 </html>
+```
