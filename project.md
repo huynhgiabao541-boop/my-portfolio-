@@ -36,11 +36,33 @@ The content is organized as follows:
 ```
 .codegraph/
   .gitignore
+482029458_2469570630053863_8634627401507065921_n.jpg
 Huynh-Gia-Bao-TopCV.vn-210826.113057.md
+Huynh-Gia-Bao-TopCV.vn-210826.113057.pdf
 index.html
 ```
 
 # Files
+
+## File: .codegraph/.gitignore
+```
+# CodeGraph data files
+# These are local to each machine and should not be committed
+
+# Database
+*.db
+*.db-wal
+*.db-shm
+
+# Cache
+cache/
+
+# Logs
+*.log
+
+# Hook markers
+.dirty
+```
 
 ## File: Huynh-Gia-Bao-TopCV.vn-210826.113057.md
 ```markdown
@@ -142,26 +164,6 @@ PROJECTS<br>Task24h - Retail Management Platform (Backend - Frontend)<br>Backend
 - Assigned tasks, conducted code reviews, and provided technical support to team members. Led the team to successfully digitize the entire competition workflow—from registration to dispute resolution—improving transparency and minimizing manual errors.
 ```
 
-## File: .codegraph/.gitignore
-```
-# CodeGraph data files
-# These are local to each machine and should not be committed
-
-# Database
-*.db
-*.db-wal
-*.db-shm
-
-# Cache
-cache/
-
-# Logs
-*.log
-
-# Hook markers
-.dirty
-```
-
 ## File: index.html
 ```html
 <!DOCTYPE html>
@@ -229,7 +231,23 @@ cache/
   <style type="text/tailwindcss">
     @layer utilities {
       body {
-        @apply bg-slate-50 text-slate-900 dark:bg-[#0b1120] dark:text-[#e2e8f0] overflow-x-hidden;
+        @apply text-slate-900 dark:text-[#e2e8f0] overflow-x-hidden transition-colors duration-500;
+        background-color: #f1f5f9;
+        background-image: 
+          radial-gradient(at 80% 0%, hsla(285,96%,75%,0.4) 0px, transparent 50%),
+          radial-gradient(at 0% 40%, hsla(186,100%,69%,0.4) 0px, transparent 50%),
+          radial-gradient(at 80% 100%, hsla(220,100%,75%,0.4) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, hsla(340,100%,80%,0.4) 0px, transparent 50%);
+        background-attachment: fixed;
+      }
+
+      .dark body {
+        background-color: #0b1120;
+        background-image: 
+          radial-gradient(at 80% 0%, hsla(285,96%,40%,0.3) 0px, transparent 50%),
+          radial-gradient(at 0% 40%, hsla(186,100%,40%,0.3) 0px, transparent 50%),
+          radial-gradient(at 80% 100%, hsla(220,100%,40%,0.3) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, hsla(340,100%,40%,0.3) 0px, transparent 50%);
       }
       
       body::before {
@@ -247,9 +265,11 @@ cache/
           linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
       }
 
-      .glass-card {
-        @apply bg-white/60 dark:bg-slate-800/40 backdrop-blur-xl border border-white/80 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] transition-all;
-      }
+    .glass-card {
+  @apply bg-white/30 dark:bg-slate-800/30 backdrop-blur-xl 
+         border border-white/40 dark:border-white/10
+         shadow-[inset_0_1px_0_0_rgba(255,255,255,0.5),0_8px_32px_0_rgba(31,38,135,0.1)];
+}
       .glass-card:hover {
         @apply border-cyan-400/50 dark:border-cyan-400/30 shadow-[0_8px_32px_0_rgba(34,211,238,0.15)];
       }
@@ -259,7 +279,7 @@ cache/
       }
 
       .liquid-pill {
-        @apply relative overflow-hidden bg-white/60 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-sm transition-all;
+        @apply relative overflow-hidden bg-white/30 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-sm transition-all;
       }
       .liquid-pill:hover {
         @apply bg-white/80 dark:bg-white/5 border-slate-300 dark:border-white/20;
@@ -286,20 +306,36 @@ cache/
 
     /* Background blobs */
     .blob-1 {
-      position: fixed; top: -10%; left: -10%; width: 50vw; height: 50vw;
+      position: fixed; top: -10%; left: -10%; width: 70vw; height: 70vw;
       background: radial-gradient(circle, rgba(34,211,238,0.15) 0%, transparent 70%);
       filter: blur(60px); z-index: -1; pointer-events: none;
       animation: float 20s ease-in-out infinite alternate;
     }
     .blob-2 {
-      position: fixed; bottom: -20%; right: -10%; width: 60vw; height: 60vw;
+      position: fixed; bottom: -20%; right: -10%; width: 80vw; height: 80vw;
       background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
       filter: blur(80px); z-index: -1; pointer-events: none;
       animation: float 25s ease-in-out infinite alternate-reverse;
     }
+    .blob-3 {
+      position: fixed; top: 40%; left: 50%; width: 60vw; height: 60vw;
+      background: radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%); /* Purple */
+      filter: blur(70px); z-index: -1; pointer-events: none;
+      animation: float-alt 22s ease-in-out infinite alternate;
+    }
+    .blob-4 {
+      position: fixed; top: 30%; left: -20%; width: 70vw; height: 70vw;
+      background: radial-gradient(circle, rgba(34,211,238,0.12) 0%, transparent 70%);
+      filter: blur(70px); z-index: -1; pointer-events: none;
+      animation: float-alt 28s ease-in-out infinite alternate-reverse;
+    }
     @keyframes float {
       0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(50px, 50px) scale(1.1); }
+      100% { transform: translate(100px, 100px) scale(1.1); }
+    }
+    @keyframes float-alt {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-80px, 120px) scale(1.15); }
     }
   </style>
 </head>
@@ -308,16 +344,19 @@ cache/
 
   <div class="blob-1"></div>
   <div class="blob-2"></div>
+  <div class="blob-3"></div>
+  <div class="blob-4"></div>
 
   <!-- Navigation -->
   <header class="fixed top-0 inset-x-0 z-50 glass-nav">
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-2 font-mono font-bold text-sm tracking-wide">
+      <div class="flex items-center gap-2 font-mono font-bold text-base tracking-wide">
         <div class="w-2 h-2 rounded-full bg-brand-cyan shadow-[0_0_8px_#22d3ee]"></div>
         <span class="text-slate-900 dark:text-white">huynhgiabao</span><span class="text-slate-500">.dev</span>
       </div>
-      <nav class="hidden md:flex items-center gap-8 font-mono text-sm text-slate-600 dark:text-slate-400">
+      <nav class="hidden md:flex items-center gap-8 font-mono text-base text-slate-600 dark:text-slate-400">
         <a href="#about" class="hover:text-brand-cyan transition-colors">Về tôi</a>
+        <a href="#education" class="hover:text-brand-cyan transition-colors">Học vấn</a>
         <a href="#experience" class="hover:text-brand-cyan transition-colors">Kinh nghiệm</a>
         <a href="#projects" class="hover:text-brand-cyan transition-colors">Dự án</a>
         <a href="#skills" class="hover:text-brand-cyan transition-colors">Kỹ năng</a>
@@ -346,9 +385,8 @@ cache/
         <div
           class="absolute inset-0 bg-white/50 dark:bg-white/10 backdrop-blur-md border border-white/80 dark:border-white/20 rounded-full shadow-lg z-10 flex flex-col items-center justify-center overflow-hidden">
           <!-- TODO: Thay thế "avatar.jpg" bằng tên file ảnh của bạn (VD: my-photo.png) -->
-          <img
-            src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/482029458_2469570630053863_8634627401507065921_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s960x960&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=rjlSlI1nfTUQ7kNvwFgietD&_nc_oc=AdpABxRMeYNkSaIa8qVsKpNanU_wo2nEEgUM5Qy4bo1os8jS9C9fNkBfuj1tW2_O3X4&_nc_zt=23&_nc_ht=scontent.fsgn5-11.fna&_nc_gid=VJWnqwunEKHvu71NRu5ung&_nc_ss=7b2a8&oh=00_AQKFvH5rnR-91jFeFWo36UZysaPYJXMFhLB-s-G5HvfCFA&oe=6AA98524"
-            alt="Huỳnh Gia Bảo" class="w-full h-full object-cover"
+          <img src="482029458_2469570630053863_8634627401507065921_n.jpg" alt="Huỳnh Gia Bảo"
+            class="w-full h-full object-cover"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           <i class="ph-fill ph-user text-5xl text-slate-400 dark:text-slate-400 mb-1 hidden"></i>
         </div>
@@ -359,7 +397,7 @@ cache/
 
       <div class="space-y-4 max-w-4xl">
         <div
-          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-sm text-sm text-brand-cyan mb-2">
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/30 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-sm text-sm text-brand-cyan mb-2">
           <i class="ph-fill ph-sparkle animate-spin-slow"></i>
           <span class="font-medium font-mono text-slate-700 dark:text-brand-cyan">Backend Developer (.NET &
             NodeJS)</span>
@@ -379,14 +417,53 @@ cache/
           class="px-6 py-3 rounded-xl bg-brand-cyan text-white dark:text-slate-950 font-bold hover:bg-cyan-500 dark:hover:bg-cyan-300 hover:scale-105 transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center gap-2">
           Xem Dự Án <i class="ph-bold ph-arrow-right"></i>
         </a>
+        <a href="Huynh-Gia-Bao-TopCV.vn-210826.113057.pdf" download="Huynh-Gia-Bao-Backend.pdf"
+          class="px-6 py-3 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 text-slate-700 dark:text-slate-200 font-bold hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all flex items-center gap-2">
+          Tải CV <i class="ph-bold ph-download-simple"></i>
+        </a>
         <a href="https://www.facebook.com/nhunuococ.man.3/" target="_blank"
-          class="w-12 h-12 rounded-xl bg-white/60 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all">
+          class="w-12 h-12 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all">
           <i class="ph-fill ph-facebook-logo text-xl"></i>
         </a>
         <a href="mailto:Huynhgiabao541@gmail.com"
-          class="w-12 h-12 rounded-xl bg-white/60 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all">
+          class="w-12 h-12 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all">
           <i class="ph-fill ph-envelope-simple text-xl"></i>
         </a>
+      </div>
+    </section>
+
+    <!-- Học Vấn (Education) -->
+    <section id="education" class="space-y-12 relative z-10">
+      <div class="flex items-center gap-4">
+        <div
+          class="w-10 h-10 rounded-lg bg-brand-cyan/10 dark:bg-brand-cyan/20 flex items-center justify-center border border-brand-cyan/20 dark:border-brand-cyan/30 text-brand-cyan">
+          <i class="ph-fill ph-graduation-cap text-xl"></i>
+        </div>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Học vấn</h2>
+      </div>
+
+      <div class="space-y-6">
+        <div
+          class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-12 relative overflow-hidden group">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 blur-3xl rounded-full z-0 pointer-events-none group-hover:bg-brand-cyan/20 transition-all">
+          </div>
+
+          <div class="md:w-1/4 shrink-0 relative z-10">
+            <span
+              class="font-mono text-base text-brand-cyan bg-brand-cyan/5 dark:bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">10/2022
+              - 11/2026</span>
+          </div>
+          <div class="relative z-10 space-y-3">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Engineering</h3>
+            <p class="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-base">FPT University</p>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              Điểm trung bình (GPA): <strong class="text-slate-800 dark:text-slate-200">7.3/10</strong>.<br>
+              Chuyên ngành Kỹ thuật Phần mềm, được đào tạo bài bản về kiến trúc phần mềm, cơ sở dữ liệu, và quy trình
+              phát triển dự án.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -409,12 +486,12 @@ cache/
 
           <div class="md:w-1/4 shrink-0 relative z-10">
             <span
-              class="font-mono text-sm text-brand-cyan bg-brand-cyan/5 dark:bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">04/2025
+              class="font-mono text-base text-brand-cyan bg-brand-cyan/5 dark:bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">04/2025
               - Nay</span>
           </div>
           <div class="relative z-10 space-y-3">
             <h3 class="text-xl font-bold text-slate-900 dark:text-white">Backend & Frontend Developer</h3>
-            <p class="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-sm">T.A Technical Consulting Co., Ltd.
+            <p class="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-base">T.A Technical Consulting Co., Ltd.
             </p>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
               Thiết kế & phát triển hệ thống Web/API (E-commerce, quản lý, hạ tầng giao thông) với Node.js (TypeScript),
@@ -428,12 +505,12 @@ cache/
           class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-12 relative overflow-hidden group">
           <div class="md:w-1/4 shrink-0 relative z-10">
             <span
-              class="font-mono text-sm text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-white/5 px-3 py-1 rounded-full border border-slate-200 dark:border-white/10">12/2024
+              class="font-mono text-base text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-white/5 px-3 py-1 rounded-full border border-slate-200 dark:border-white/10">12/2024
               - 04/2025</span>
           </div>
           <div class="relative z-10 space-y-3">
             <h3 class="text-xl font-bold text-slate-900 dark:text-white">Backend Intern</h3>
-            <p class="text-slate-500 dark:text-slate-400 font-mono text-sm">Amazing Technology Solutions</p>
+            <p class="text-slate-500 dark:text-slate-400 font-mono text-base">Amazing Technology Solutions</p>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
               Xây dựng hệ thống Production & QA/QC cho nhà máy may mặc: backend services với .NET Core, Microservices,
               Clean Architecture; tối ưu SQL cho dữ liệu thời gian thực; số hoá quy trình, giảm sai sót thủ công.
@@ -463,13 +540,19 @@ cache/
             </div>
             <div class="relative z-10 flex flex-col h-full">
               <div class="flex justify-between items-start mb-4">
-                <h3 class="font-bold text-xl text-slate-900 dark:text-white">SEAL System</h3>
+                <h3 class="font-bold text-xl text-slate-900 dark:text-white flex items-center gap-2 flex-wrap">
+                  SEAL System
+                  <span
+                    class="px-2 py-0.5 rounded bg-gradient-to-r from-brand-cyan to-blue-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">
+                    <i class="ph-fill ph-star"></i>
+                  </span>
+                </h3>
                 <div
                   class="w-8 h-8 rounded-lg bg-brand-cyan/10 dark:bg-brand-cyan/20 flex items-center justify-center border border-brand-cyan/30 dark:border-brand-cyan/50 text-brand-cyan shrink-0">
                   <i class="ph-fill ph-trophy"></i>
                 </div>
               </div>
-              <p class="text-brand-cyan text-xs font-mono mb-3">Project Leader · Backend</p>
+              <p class="text-brand-cyan text-sm font-mono mb-3">Project Leader · Backend</p>
               <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
                 Hệ thống quản lý giải đấu học thuật. Quản lý phân quyền đa vai trò, xử lý khiếu nại. Tối ưu SQL Server
                 cho cấu trúc giải đấu phức tạp.
@@ -497,7 +580,7 @@ cache/
                 <i class="ph-bold ph-arrow-up-right"></i>
               </a>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend · Frontend</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend · Frontend</p>
             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
               Hệ thống quản lý bán lẻ ERP. Phân tích codebase & luồng dữ liệu, viết GraphQL queries/mutations, quản lý
               Authorization.
@@ -522,7 +605,7 @@ cache/
                 <i class="ph-bold ph-arrow-up-right"></i>
               </a>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend</p>
             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
               Hệ thống mượn/trả sách. Dùng EF Core & FluentValidation. Tích hợp Hangfire xử lý background (cập nhật quá
               hạn sách).
@@ -549,7 +632,7 @@ cache/
                 <i class="ph-bold ph-arrow-up-right"></i>
               </a>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs font-mono mb-3">Backend</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend</p>
             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
               Số hoá báo cáo sự cố hạ tầng. Xuất PDF/Excel/Word, xử lý ảnh (Sharp), lưu trữ AWS S3. Quản lý qua Prisma
               ORM.
@@ -563,6 +646,60 @@ cache/
               <span
                 class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">AWS
                 S3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 h-full flex flex-col relative overflow-hidden group">
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="font-bold text-xl text-slate-900 dark:text-white">Rhymo</h3>
+              <div
+                class="w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-white/10 flex items-center justify-center border border-slate-300/50 dark:border-white/20 text-slate-600 dark:text-slate-300 shrink-0">
+                <i class="ph-bold ph-music-notes"></i>
+              </div>
+            </div>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
+              Game học âm nhạc tương tác. Tích hợp Groq API tự động sinh câu hỏi bằng AI. Quản lý tiến độ học người
+              chơi, hệ thống cảnh báo. Triển khai CI/CD.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">.NET
+                Core</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Groq
+                API</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 h-full flex flex-col relative overflow-hidden group">
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="font-bold text-xl text-slate-900 dark:text-white">Production & QA/QC</h3>
+              <div
+                class="w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-white/10 flex items-center justify-center border border-slate-300/50 dark:border-white/20 text-slate-600 dark:text-slate-300 shrink-0">
+                <i class="ph-bold ph-factory"></i>
+              </div>
+            </div>
+            <p class="text-slate-500 dark:text-slate-400 text-sm font-mono mb-3">Backend Intern</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
+              Hệ thống quản lý sản xuất nhà máy may. Áp dụng Microservices & Clean Architecture. Quản lý quy trình sản
+              xuất và dữ liệu QA/QC theo thời gian thực.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">.NET
+                Core</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">Microservices</span>
+              <span
+                class="text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">SQL
+                Server</span>
             </div>
           </div>
         </div>
@@ -639,7 +776,7 @@ cache/
       <div class="text-center md:text-left">
         <div class="font-bold text-slate-900 dark:text-white mb-2">Học vấn</div>
         <p class="text-slate-600 dark:text-slate-400 text-sm">FPT University — Software Engineering</p>
-        <p class="text-slate-500 font-mono text-xs mt-1">10/2022 - Dự kiến 11/2026 • GPA: 7.3</p>
+        <p class="text-slate-500 font-mono text-sm mt-1">10/2022 - Dự kiến 11/2026 • GPA: 7.3</p>
       </div>
 
       <div class="flex flex-col md:flex-row gap-6 text-sm">
