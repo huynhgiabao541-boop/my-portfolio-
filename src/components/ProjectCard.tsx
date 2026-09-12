@@ -1,7 +1,9 @@
 import SkillBadge from './SkillBadge';
 import GlassCard from './GlassCard';
+import { useTranslation } from 'react-i18next';
 
 export default function ProjectCard({ project }: { project: any }) {
+  const { t } = useTranslation();
   const isFeatured = project.id === 1;
 
   return (
@@ -37,9 +39,9 @@ export default function ProjectCard({ project }: { project: any }) {
             )}
           </div>
           
-          <p className="text-brand-cyan text-sm font-mono mb-3">{project.role}</p>
+          <p className="text-brand-cyan text-sm font-mono mb-3">{t(`projects_list.${project.id}.role`)}</p>
           <p className="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-1">
-            {project.description}
+            {t(`projects_list.${project.id}.description`)}
           </p>
           
           <div className="flex flex-wrap gap-2 mt-auto">

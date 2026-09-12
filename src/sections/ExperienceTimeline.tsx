@@ -1,7 +1,9 @@
 import { experiences } from '../data/portfolioData';
 import GlassCard from '../components/GlassCard';
+import { useTranslation } from 'react-i18next';
 
 export default function ExperienceTimeline() {
+  const { t } = useTranslation();
   return (
     <>
       {/* Education */}
@@ -11,7 +13,7 @@ export default function ExperienceTimeline() {
             className="w-10 h-10 rounded-lg bg-brand-cyan/10 dark:bg-brand-cyan/20 flex items-center justify-center border border-brand-cyan/20 dark:border-brand-cyan/30 text-brand-cyan">
             <i className="ph-fill ph-graduation-cap text-xl"></i>
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Học vấn</h2>
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white">{t('nav.education')}</h2>
         </div>
 
         <div className="space-y-6">
@@ -28,8 +30,8 @@ export default function ExperienceTimeline() {
               <h3 className="text-xl font-bold text-slate-900 dark:text-white">Software Engineering</h3>
               <p className="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-base">FPT University</p>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                Điểm trung bình (GPA): <strong className="text-slate-800 dark:text-slate-200">7.3/10</strong>.<br />
-                Chuyên ngành Kỹ thuật Phần mềm, được đào tạo bài bản về kiến trúc phần mềm, cơ sở dữ liệu, và quy trình phát triển dự án.
+                {t('education.gpa')} <strong className="text-slate-800 dark:text-slate-200">7.3/10</strong>.<br />
+                {t('education.desc')}
               </p>
             </div>
           </GlassCard>
@@ -43,7 +45,7 @@ export default function ExperienceTimeline() {
             className="w-10 h-10 rounded-lg bg-brand-cyan/10 dark:bg-brand-cyan/20 flex items-center justify-center border border-brand-cyan/20 dark:border-brand-cyan/30 text-brand-cyan">
             <i className="ph-fill ph-briefcase text-xl"></i>
           </div>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Kinh nghiệm làm việc</h2>
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white">{t('nav.experience')}</h2>
         </div>
 
         <div className="space-y-6">
@@ -58,14 +60,14 @@ export default function ExperienceTimeline() {
               <div className="md:w-1/4 shrink-0 relative z-10">
                 <span
                   className={`font-mono text-base px-3 py-1 rounded-full border ${exp.id === 1 ? 'text-brand-cyan bg-brand-cyan/5 dark:bg-brand-cyan/10 border-brand-cyan/20' : 'text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10'}`}>
-                  {exp.period}
+                  {t(`experience_list.${exp.id}.period`)}
                 </span>
               </div>
               <div className="relative z-10 space-y-3">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.role}</h3>
-                <p className="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-base">{exp.company}</p>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{t(`experience_list.${exp.id}.role`)}</h3>
+                <p className="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-base">{t(`experience_list.${exp.id}.company`)}</p>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {exp.description}
+                  {t(`experience_list.${exp.id}.description`)}
                 </p>
               </div>
             </GlassCard>
