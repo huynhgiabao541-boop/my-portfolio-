@@ -2,6 +2,38 @@
 @import "tw-animate-css";
 @import "@fontsource-variable/geist";
 
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/sf-pro-display-thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/sf-pro-display-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/sf-pro-display-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/sf-pro-display-semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -41,7 +73,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
-  --font-sans: 'Geist Variable', sans-serif;
+  --font-sans: 'SF Pro Display', 'Geist Variable', sans-serif;
 }
 
 @layer utilities {
@@ -192,7 +224,7 @@
 @layer base {
   .theme {
     --font-heading: var(--font-sans);
-    --font-sans: 'Geist Variable', sans-serif;
+    --font-sans: 'SF Pro Display', 'Geist Variable', sans-serif;
   }
 
   :root {
