@@ -2,6 +2,7 @@ import './i18n';
 import React, { useState, Suspense, lazy } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
+import { useDarkMode } from './hooks/useDarkMode';
 import HeroSection from './sections/HeroSection';
 import ExperienceTimeline from './sections/ExperienceTimeline';
 import Preloader from './components/Preloader';
@@ -17,6 +18,19 @@ const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const { theme } = useDarkMode();
+
+  const cloudProps = theme === 'dark'
+    ? {
+      cloudColor: "#4a5a7a",
+      skyTopColor: "#050818",
+      skyBottomColor: "#1a2942"
+    }
+    : {
+      cloudColor: "#fbf8f2",
+      skyTopColor: "#3876ba",
+      skyBottomColor: "#8cbfe8"
+    };
 
   if (isLoading) {
     return <Preloader onComplete={() => setIsLoading(false)} />;
@@ -32,24 +46,24 @@ export default function App() {
   return (
     <HelmetProvider>
       <SEO />
-      <CloudShader className="fixed inset-0 -z-10 w-full h-screen" />
+      <CloudShader className="fixed inset-0 -z-10 w-full h-screen" {...cloudProps} />
       <AnimatedBlobs />
       <Header />
-      
+
       <main className="max-w-5xl mx-auto px-6 pt-32 pb-24 space-y-32">
         <ScrollReveal>
           <HeroSection />
         </ScrollReveal>
-        
+
         <ScrollReveal>
           <ExperienceTimeline />
         </ScrollReveal>
-        
+
         <Suspense fallback={<Loader />}>
           <ScrollReveal>
             <ProjectList />
           </ScrollReveal>
-          
+
           <ScrollReveal>
             <SkillsSection />
           </ScrollReveal>

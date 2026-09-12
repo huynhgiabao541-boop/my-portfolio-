@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="text-center py-4 border-t border-slate-200 dark:border-white/5 text-xs text-slate-500 font-mono">
-        © 2026 Huỳnh Gia Bảo. Designed with Glassmorphism.
+        © 2026 Huỳnh Gia Bảo. Designed with Antigravity.
       </div>
     </footer>
   );

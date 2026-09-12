@@ -34,7 +34,7 @@ export default function LiquidPill({ children, className = '', onClick }: Liquid
 
   return (
     <div 
-      className={`relative overflow-hidden bg-white/30 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-sm transition-all hover:bg-white/80 dark:hover:bg-white/5 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer ${className}`} 
+      className={`relative rounded-2xl overflow-hidden bg-white/30 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-sm transition-all hover:bg-white/80 dark:hover:bg-white/5 hover:border-slate-300 dark:hover:border-white/20 cursor-pointer ${className}`} 
       onClick={handleClick}
     >
       {children}

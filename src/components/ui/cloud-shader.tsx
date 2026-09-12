@@ -145,13 +145,34 @@ void main() {
   vec3 sky = mix(u_skyBottom, u_skyTop, v_uv.y);
   vec3 color = sky;
 
+  // stars — lưới vuông đều, vẽ chấm tròn nhỏ
+  vec2 starGrid = p * 150.0; // Dùng p (đã fix aspect ratio) thay vì v_uv, giảm số ô xuống để sao to hơn
+  vec2 starCell = floor(starGrid);
+  vec2 starLocal = fract(starGrid) - 0.5; // toạ độ trong ô, tâm ở (0,0)
+
+  float starHash = hash(starCell + hash(starCell.yx) * 17.0);
+  float starExists = step(0.95, starHash); // mật độ sao (5% số ô có sao)
+
+  // random lệch tâm nhẹ
+  vec2 starOffset = vec2(hash(starCell + 3.1), hash(starCell + 7.7)) - 0.5;
+  vec2 starDiff = starLocal - starOffset * 0.5;
+  float starDist = length(starDiff);
+
+  // Tăng bán kính sao (0.25 thay vì 0.1) để không bị nhỏ hơn 1 pixel trên màn hình nét
+  float starDot = smoothstep(0.25, 0.0, starDist) * starExists;
+  float starBrightness = 0.5 + 0.5 * hash(starCell + 9.9);
+  float starVisibility = smoothstep(0.3, 0.8, v_uv.y);
+  
+  // Tăng cường độ sáng (0.8 thay vì 0.35)
+  color += vec3(starDot) * starBrightness * starVisibility * 0.8;
+
   // faint haze band near the horizon
   color = mix(color, u_skyBottom * 1.06, smoothstep(0.35, 0.0, v_uv.y) * 0.5);
 
-  // soft sun glow, upper area
+  // soft sun glow (moon), upper area
   vec2 sunPos = vec2(aspect * 0.78, 0.92);
   float sunDist = length(p - sunPos);
-  color += vec3(1.0, 0.95, 0.82) * exp(-sunDist * sunDist * 5.0) * 0.28;
+  color += vec3(0.85, 0.88, 1.0) * exp(-sunDist * sunDist * 5.0) * 0.15;
 
   // thin cirrus streaks, stretched horizontally, high in the sky
   float cirrusBand = smoothstep(0.55, 0.8, v_uv.y) * (1.0 - smoothstep(0.9, 1.0, v_uv.y));
