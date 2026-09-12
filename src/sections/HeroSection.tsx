@@ -45,7 +45,7 @@ export default function HeroSection() {
           className="px-6 py-3 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 text-slate-700 dark:text-slate-200 font-bold hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all flex items-center gap-2">
           {t('hero.download_cv')} <i className="ph-bold ph-download-simple"></i>
         </a>
-        <a href="https://www.facebook.com/nhunuococ.man.3/" target="_blank"
+        <a href="https://www.facebook.com/h.gia.bao.370673/" target="_blank"
           className="w-12 h-12 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all">
           <i className="ph-fill ph-facebook-logo text-xl"></i>
         </a>
