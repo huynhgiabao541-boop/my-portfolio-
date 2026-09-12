@@ -294,9 +294,7 @@ export const CloudShader = ({
 
     let frame = 0;
     let running = true;
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+    const reduceMotion = false; // Forced to false to ensure animation always plays
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -320,7 +318,7 @@ export const CloudShader = ({
     const draw = (now: number) => {
       if (!running) return;
       const p = paramsRef.current;
-      const elapsed = reduceMotion ? 0 : ((now - start) / 1000) * p.speed;
+      const elapsed = ((now - start) / 1000) * p.speed;
       const cloud = parseHex(p.cloudColor);
       const skyTop = parseHex(p.skyTopColor);
       const skyBottom = parseHex(p.skyBottomColor);

@@ -8,6 +8,7 @@ import Preloader from './components/Preloader';
 import ScrollReveal from './components/ScrollReveal';
 import AnimatedBlobs from './components/AnimatedBlobs';
 import SEO from './components/SEO';
+import { CloudShader } from './components/ui/cloud-shader';
 
 // Lazy loading các component ở dưới cùng của trang
 const ProjectList = lazy(() => import('./sections/ProjectList'));
@@ -31,6 +32,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <SEO />
+      <CloudShader className="fixed inset-0 -z-10 w-full h-screen" />
       <AnimatedBlobs />
       <Header />
       
