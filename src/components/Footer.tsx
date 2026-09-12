@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Cột trái: SVG Image */}
         <div className="flex justify-center md:justify-start">
-          <img src={footerLogo} alt="Footer Artwork" className="w-full max-w-[400px] h-auto object-contain" />
+          <img src={footerLogo} alt="Footer Artwork" className="w-full max-w-[400px] h-auto object-contain dark:invert" />
         </div>
 
         {/* Cột phải: Nội dung hiện tại */}

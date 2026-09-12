@@ -2,37 +2,7 @@
 @import "tw-animate-css";
 @import "@fontsource-variable/geist";
 
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('./assets/sf-pro-display-thin.woff2') format('woff2');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('./assets/sf-pro-display-regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('./assets/sf-pro-display-medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('./assets/sf-pro-display-semibold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -73,7 +43,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
-  --font-sans: 'SF Pro Display', 'Geist Variable', sans-serif;
+  --font-sans: 'Inter', sans-serif;
 }
 
 @layer utilities {
@@ -87,20 +57,7 @@
     background-color: #0b0c0e;
   }
 
-  body::before {
-    content: "";
-    @apply fixed inset-0 z-[-2] pointer-events-none;
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 64px 64px;
-  }
 
-  .dark body::before {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  }
 
   .glass-card {
     @apply bg-white/30 dark:bg-slate-800/30 backdrop-blur-xl border border-white/40 dark:border-white/10;
@@ -224,7 +181,7 @@
 @layer base {
   .theme {
     --font-heading: var(--font-sans);
-    --font-sans: 'SF Pro Display', 'Geist Variable', sans-serif;
+    --font-sans: 'Inter', sans-serif;
   }
 
   :root {

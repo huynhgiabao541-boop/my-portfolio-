@@ -315,7 +315,7 @@ export const CloudShader = ({
 
     let frame = 0;
     let running = true;
-    const reduceMotion = false; // Forced to false to ensure animation always plays
+    
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);

@@ -1,5 +1,4 @@
 import SkillBadge from './SkillBadge';
-import GlassCard from './GlassCard';
 import { useTranslation } from 'react-i18next';
 
 export default function ProjectCard({ project }: { project: any }) {

@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent, ReactNode } from 'react';
+import { ReactNode, useState, MouseEvent } from 'react';
 
 interface Ripple {
   x: number;

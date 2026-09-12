@@ -22,10 +22,9 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
         /* Cấu hình Path Alias @/* */
-        "baseUrl": ".",
         "paths": {
             "@/*": [
-                "src/*"
+                "./src/*"
             ]
         }
     },

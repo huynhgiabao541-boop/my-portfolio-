@@ -1,5 +1,5 @@
 import './i18n';
-import React, { useState, Suspense, lazy } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import { useDarkMode } from './hooks/useDarkMode';
