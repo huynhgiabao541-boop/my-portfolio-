@@ -36,7 +36,7 @@ export default function HeroSection() {
 
       <div className="flex items-center gap-4 pt-4">
         <a href="#projects"
-          className="px-6 py-3 rounded-xl bg-brand-cyan text-white dark:text-slate-950 font-bold hover:bg-cyan-500 dark:hover:bg-cyan-300 hover:scale-105 transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center gap-2">
+          className="px-6 py-3 rounded-xl bg-cyan-500 dark:bg-cyan-300 text-white dark:text-slate-950 font-bold hover:bg-cyan-500 dark:hover:bg-cyan-300 hover:scale-105 transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center gap-2">
           {t('hero.view_projects')} <i className="ph-bold ph-arrow-right"></i>
         </a>
         <a href="Huynh-Gia-Bao-CV.pdf" download="Huynh-Gia-Bao-Backend.pdf"
