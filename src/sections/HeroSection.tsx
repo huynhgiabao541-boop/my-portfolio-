@@ -41,7 +41,7 @@ export default function HeroSection() {
           className="px-6 py-3 rounded-xl bg-cyan-500 dark:bg-cyan-300 text-white dark:text-slate-950 font-bold hover:bg-cyan-500 dark:hover:bg-cyan-300 hover:scale-105 transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center gap-2">
           {t('hero.view_projects')} <i className="ph-bold ph-arrow-right"></i>
         </a>
-        <a href="Huynh-Gia-Bao-CV.pdf" download="Huynh-Gia-Bao-Backend.pdf"
+        <a href="/Huynh-Gia-Bao-CV.pdf" download="Huynh-Gia-Bao-Backend.pdf"
           className="px-6 py-3 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 text-slate-700 dark:text-slate-200 font-bold hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all flex items-center gap-2">
           {t('hero.download_cv')} <i className="ph-bold ph-download-simple"></i>
         </a>
