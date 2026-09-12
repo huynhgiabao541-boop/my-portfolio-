@@ -1,12 +1,18 @@
 import './i18n';
-import { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import HeroSection from './sections/HeroSection';
 import ExperienceTimeline from './sections/ExperienceTimeline';
-import ProjectList from './sections/ProjectList';
-import SkillsSection from './sections/SkillsSection';
 import Preloader from './components/Preloader';
+import ScrollReveal from './components/ScrollReveal';
+import AnimatedBlobs from './components/AnimatedBlobs';
+import SEO from './components/SEO';
+
+// Lazy loading các component ở dưới cùng của trang
+const ProjectList = lazy(() => import('./sections/ProjectList'));
+const SkillsSection = lazy(() => import('./sections/SkillsSection'));
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,23 +21,42 @@ export default function App() {
     return <Preloader onComplete={() => setIsLoading(false)} />;
   }
 
+  // Component chờ khi lazy load
+  const Loader = () => (
+    <div className="flex justify-center items-center py-12 text-brand-cyan">
+      <i className="ph-bold ph-spinner animate-spin text-3xl"></i>
+    </div>
+  );
+
   return (
-    <>
-      <div className="blob-1"></div>
-      <div className="blob-2"></div>
-      <div className="blob-3"></div>
-      <div className="blob-4"></div>
-
+    <HelmetProvider>
+      <SEO />
+      <AnimatedBlobs />
       <Header />
-
+      
       <main className="max-w-5xl mx-auto px-6 pt-32 pb-24 space-y-32">
-        <HeroSection />
-        <ExperienceTimeline />
-        <ProjectList />
-        <SkillsSection />
+        <ScrollReveal>
+          <HeroSection />
+        </ScrollReveal>
+        
+        <ScrollReveal>
+          <ExperienceTimeline />
+        </ScrollReveal>
+        
+        <Suspense fallback={<Loader />}>
+          <ScrollReveal>
+            <ProjectList />
+          </ScrollReveal>
+          
+          <ScrollReveal>
+            <SkillsSection />
+          </ScrollReveal>
+        </Suspense>
       </main>
 
-      <Footer />
-    </>
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
+    </HelmetProvider>
   );
 }

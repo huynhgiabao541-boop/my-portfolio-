@@ -4,9 +4,12 @@ export default function HeroSection() {
       <div className="relative w-40 h-40 flex items-center justify-center mb-4">
         <div
           className="absolute inset-0 bg-white/50 dark:bg-white/10 backdrop-blur-md border border-white/80 dark:border-white/20 rounded-full shadow-lg z-10 flex flex-col items-center justify-center overflow-hidden">
-          <img src="482029458_2469570630053863_8634627401507065921_n.jpg?v=1" alt="Huỳnh Gia Bảo"
-            className="w-full h-full object-cover"
-            onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling && (e.currentTarget.nextElementSibling as HTMLElement).classList.remove('hidden') }} />
+          <picture>
+            <source srcSet="avatar.webp" type="image/webp" />
+            <img src="482029458_2469570630053863_8634627401507065921_n.jpg?v=1" alt="Huỳnh Gia Bảo"
+              className="w-full h-full object-cover"
+              onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling && (e.currentTarget.nextElementSibling as HTMLElement).classList.remove('hidden') }} />
+          </picture>
           <i className="ph-fill ph-user text-5xl text-slate-400 dark:text-slate-400 mb-1 hidden"></i>
         </div>
         <div
@@ -33,7 +36,7 @@ export default function HeroSection() {
           className="px-6 py-3 rounded-xl bg-brand-cyan text-white dark:text-slate-950 font-bold hover:bg-cyan-500 dark:hover:bg-cyan-300 hover:scale-105 transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center gap-2">
           Xem Dự Án <i className="ph-bold ph-arrow-right"></i>
         </a>
-        <a href="Huynh-Gia-Bao-TopCV.vn-210826.113057.pdf" download="Huynh-Gia-Bao-Backend.pdf"
+        <a href="Huynh-Gia-Bao-CV.pdf" download="Huynh-Gia-Bao-Backend.pdf"
           className="px-6 py-3 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 text-slate-700 dark:text-slate-200 font-bold hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all flex items-center gap-2">
           Tải CV <i className="ph-bold ph-download-simple"></i>
         </a>
