@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 export default function Footer() {
   const { t } = useTranslation();
   return (
-    <footer className="border-t border-slate-200 dark:border-white/10 mt-12 bg-white/40 dark:bg-black/20 backdrop-blur-md relative z-10">
+    <footer className="mt-12 glass-nav border-t-0 border-b-0 rounded-t-full relative z-10">
       <div className="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <div className="font-bold text-slate-900 dark:text-white mb-2">{t('nav.education')}</div>
