@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export default function ExperienceTimeline() {
   const { t } = useTranslation();
   return (
-    <>
+    <div className="space-y-32">
       {/* Education */}
       <section id="education" className="space-y-12 relative z-10">
         <div className="flex items-center gap-4">
@@ -74,6 +74,6 @@ export default function ExperienceTimeline() {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }
