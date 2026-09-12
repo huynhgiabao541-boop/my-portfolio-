@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
 
+import avatarImg from '../assets/482029458_2469570630053863_8634627401507065921_n.jpg';
+
 export default function HeroSection() {
   const { t } = useTranslation();
   return (
@@ -8,8 +10,8 @@ export default function HeroSection() {
         <div
           className="absolute inset-0 bg-white/50 dark:bg-white/10 backdrop-blur-md border border-white/80 dark:border-white/20 rounded-full shadow-lg z-10 flex flex-col items-center justify-center overflow-hidden">
           <picture>
-            <source srcSet="482029458_2469570630053863_8634627401507065921_n.jpg" type="image/webp" />
-            <img src="482029458_2469570630053863_8634627401507065921_n.jpg?v=1" alt="Huỳnh Gia Bảo"
+            <source srcSet={avatarImg} type="image/webp" />
+            <img src={avatarImg} alt="Huỳnh Gia Bảo"
               className="w-full h-full object-cover"
               onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling && (e.currentTarget.nextElementSibling as HTMLElement).classList.remove('hidden') }} />
           </picture>
