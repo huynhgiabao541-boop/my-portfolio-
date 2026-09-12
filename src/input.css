@@ -98,6 +98,7 @@
 
   .text-gradient-cyan {
     @apply bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-white bg-clip-text text-transparent;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.4));
   }
 
   .ripple-span {

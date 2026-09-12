@@ -5,7 +5,7 @@ export default function HeroSection() {
         <div
           className="absolute inset-0 bg-white/50 dark:bg-white/10 backdrop-blur-md border border-white/80 dark:border-white/20 rounded-full shadow-lg z-10 flex flex-col items-center justify-center overflow-hidden">
           <picture>
-            <source srcSet="avatar.webp" type="image/webp" />
+            <source srcSet="482029458_2469570630053863_8634627401507065921_n.jpg" type="image/webp" />
             <img src="482029458_2469570630053863_8634627401507065921_n.jpg?v=1" alt="Huỳnh Gia Bảo"
               className="w-full h-full object-cover"
               onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling && (e.currentTarget.nextElementSibling as HTMLElement).classList.remove('hidden') }} />
@@ -19,15 +19,15 @@ export default function HeroSection() {
 
       <div className="space-y-4 max-w-4xl">
         <div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/30 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-sm text-sm text-brand-cyan mb-2">
-          <i className="ph-fill ph-sparkle animate-spin-slow"></i>
-          <span className="font-medium font-mono text-slate-700 dark:text-brand-cyan">Backend Developer (.NET & NodeJS)</span>
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/30 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/50 dark:border-white/20 shadow-sm text-sm text-brand-cyan mb-2">
+          <i className="ph-fill ph-fish animate-pulse text-black dark:text-cyan-100"></i>
+          <span className="font-bold font-mono text-slate-800 dark:text-cyan-300">Backend Developer (.NET & NodeJS)</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           Xin chào, tôi là <span className="text-gradient-cyan">Huỳnh Gia Bảo</span>
         </h1>
         <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
-          Hơn 1 năm kinh nghiệm xây dựng hệ thống quy mô lớn với <strong className="text-slate-800 dark:text-slate-200">.NET Core</strong> và <strong className="text-slate-800 dark:text-slate-200">Node.js</strong>. Đam mê thiết kế & tối ưu CSDL SQL. Từng trực tiếp phát triển phần mềm quản lý cho cơ quan nhà nước và tổ chức doanh nghiệp.
+          <span className="underline decoration-brand-cyan decoration-2 underline-offset-4 font-semibold text-slate-800 dark:text-slate-200">Hơn 1 năm kinh nghiệm</span> xây dựng hệ thống quy mô lớn với <strong className="text-slate-800 dark:text-slate-200">.NET Core</strong> và <strong className="text-slate-800 dark:text-slate-200">Node.js</strong>. Đam mê thiết kế & tối ưu CSDL SQL. Từng trực tiếp phát triển phần mềm quản lý cho cơ quan nhà nước và tổ chức doanh nghiệp.
         </p>
       </div>
 
