@@ -50,7 +50,6 @@
   body {
     @apply text-slate-900 dark:text-[#e2e8f0] overflow-x-hidden transition-colors duration-500;
     background-color: #f4f4f2;
-    background-attachment: fixed;
   }
 
   .dark body {

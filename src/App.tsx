@@ -46,7 +46,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <SEO />
-      <CloudShader className="fixed inset-0 -z-10 w-full h-screen" {...cloudProps} />
+      <CloudShader className="fixed top-0 left-0 -z-10 w-full h-[100lvh]" {...cloudProps} />
       <AnimatedBlobs />
       <Header />
 
