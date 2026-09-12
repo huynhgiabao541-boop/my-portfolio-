@@ -1,0 +1,36 @@
+{
+  "name": "my-portfolio-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./dist/output.css",
+    "watch:css": "tailwindcss -i ./input.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huynhgiabao541-boop/my-portfolio-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/huynhgiabao541-boop/my-portfolio-/issues"
+  },
+  "homepage": "https://github.com/huynhgiabao541-boop/my-portfolio-#readme",
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "^10.5.6",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19"
+  },
+  "dependencies": {
+    "framer-motion": "^13.2.0",
+    "i18next": "^26.4.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-i18next": "^17.0.13"
+  }
+}

@@ -36,13 +36,121 @@ The content is organized as follows:
 ```
 .codegraph/
   .gitignore
+.repomixignore
 482029458_2469570630053863_8634627401507065921_n.jpg
+DESIGN.md
 Huynh-Gia-Bao-TopCV.vn-210826.113057.md
 Huynh-Gia-Bao-TopCV.vn-210826.113057.pdf
 index.html
+repomix.config.json
+running-dog.gif
 ```
 
 # Files
+
+## File: .repomixignore
+```
+# Add patterns to ignore here, one per line
+# Example:
+# *.log
+# tmp/
+```
+
+## File: DESIGN.md
+```markdown
+# Tài liệu Thiết kế (Design Document)
+
+## 1. Tổng quan
+Dự án là trang Portfolio cá nhân của Huỳnh Gia Bảo, được thiết kế theo phong cách **Glassmorphism** hiện đại, hỗ trợ giao diện sáng/tối (Light/Dark Mode). Trang web tập trung vào trải nghiệm người dùng với các hiệu ứng chuyển động mượt mà và nền tương tác.
+
+## 2. Typography (Kiểu chữ)
+Dự án sử dụng 2 font chữ chính từ Google Fonts:
+- **Font chính (Sans-serif):** `Inter` - Dùng cho phần lớn văn bản, tiêu đề. (Weight: 400, 500, 600, 700, 800)
+- **Font phụ (Monospace):** `JetBrains Mono` - Dùng cho các thẻ tag, label, tên vai trò, tạo cảm giác "coder". (Weight: 400, 500, 600, 700)
+
+## 3. Bảng màu (Color Palette)
+- **Màu thương hiệu (Brand Colors):**
+  - Cyan: `#22d3ee` (Màu chủ đạo cho nhấn mạnh, gradient, border)
+  - Blue: `#3b82f6` (Kết hợp với Cyan tạo gradient)
+  - Dark: `#0f172a` (Màu nhấn trong Dark Mode)
+- **Màu nền (Background):**
+  - Light Mode: `#f4f4f2`
+  - Dark Mode: `#0b0c0e`
+- **Hệ thống Grid nền:**
+  - Sử dụng `linear-gradient` tạo ra lớp lưới mờ (grid) kích thước 64x64px ở dưới nền.
+
+## 4. UI Components & Style (Thành phần giao diện)
+- **Glassmorphism (Thẻ kính):** 
+  - Class `.glass-card`, `.glass-nav`.
+  - Kết hợp `backdrop-blur-xl`, nền trắng/trong suốt (white/30 hoặc slate-800/30).
+  - Viền mờ (`border-white/40`), có đổ bóng (shadow) mượt.
+- **Liquid Pill:**
+  - Nút bấm bo góc dạng viên thuốc (`.liquid-pill`), hiệu ứng hover đổi màu nền và viền.
+- **Gradient Borders:**
+  - Class `.prism-good-border` với gradient từ Cyan tạo viền sáng đẹp mắt.
+- **Text Gradient:**
+  - Tiêu đề sử dụng `.text-gradient-cyan` (gradient từ Cyan sang Blue, và từ Cyan sang White ở Dark Mode).
+
+## 5. Hiệu ứng (Animations & Effects)
+- **Background Blobs:** 4 khối màu mờ (cyan, blue, purple) trôi nổi vô định ở background (`animation: float`).
+- **Liquid Morph:** Hiệu ứng biến đổi hình dạng chất lỏng (`animate-liquid-morph`) xung quanh avatar.
+- **Ripple Effect:** Hiệu ứng gợn sóng khi click vào các nút dạng `.liquid-pill` (được xử lý bằng JavaScript).
+- **Preloader:** Màn hình chờ có ảnh GIF, mờ dần sau 2.5 giây.
+
+## 6. Công nghệ sử dụng
+- **Cấu trúc:** HTML5.
+- **CSS Framework:** Tailwind CSS (nạp qua CDN với custom config).
+- **Icons:** Phosphor Icons.
+- **Tương tác:** Vanilla JavaScript (chuyển đổi theme, hiệu ứng ripple, preloader).
+```
+
+## File: repomix.config.json
+```json
+{
+  "$schema": "https://repomix.com/schemas/latest/schema.json",
+  "input": {
+    "maxFileSize": 52428800
+  },
+  "output": {
+    "filePath": "repomix-output.md",
+    "style": "markdown",
+    "filePathStyle": "target-relative",
+    "parsableStyle": false,
+    "fileSummary": true,
+    "directoryStructure": true,
+    "files": true,
+    "removeComments": false,
+    "removeEmptyLines": false,
+    "compress": false,
+    "topFilesLength": 5,
+    "showLineNumbers": false,
+    "truncateBase64": false,
+    "copyToClipboard": false,
+    "includeFullDirectoryStructure": false,
+    "tokenCountTree": false,
+    "git": {
+      "sortByChanges": true,
+      "sortByChangesMaxCommits": 100,
+      "includeDiffs": false,
+      "includeLogs": false,
+      "includeLogsCount": 50
+    }
+  },
+  "include": [],
+  "ignore": {
+    "useGitignore": true,
+    "useDotIgnore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": []
+  },
+  "security": {
+    "enableSecurityCheck": true
+  },
+  "tokenCount": {
+    "encoding": "o200k_base"
+  }
+}
+```
 
 ## File: .codegraph/.gitignore
 ```
@@ -230,24 +338,14 @@ PROJECTS<br>Task24h - Retail Management Platform (Backend - Frontend)<br>Backend
 
   <style type="text/tailwindcss">
     @layer utilities {
-      body {
+       body {
         @apply text-slate-900 dark:text-[#e2e8f0] overflow-x-hidden transition-colors duration-500;
-        background-color: #f1f5f9;
-        background-image: 
-          radial-gradient(at 80% 0%, hsla(285,96%,75%,0.4) 0px, transparent 50%),
-          radial-gradient(at 0% 40%, hsla(186,100%,69%,0.4) 0px, transparent 50%),
-          radial-gradient(at 80% 100%, hsla(220,100%,75%,0.4) 0px, transparent 50%),
-          radial-gradient(at 0% 100%, hsla(340,100%,80%,0.4) 0px, transparent 50%);
+        background-color: #f4f4f2;
         background-attachment: fixed;
       }
-
+ 
       .dark body {
-        background-color: #0b1120;
-        background-image: 
-          radial-gradient(at 80% 0%, hsla(285,96%,40%,0.3) 0px, transparent 50%),
-          radial-gradient(at 0% 40%, hsla(186,100%,40%,0.3) 0px, transparent 50%),
-          radial-gradient(at 80% 100%, hsla(220,100%,40%,0.3) 0px, transparent 50%),
-          radial-gradient(at 0% 100%, hsla(340,100%,40%,0.3) 0px, transparent 50%);
+        background-color: #0b0c0e;
       }
       
       body::before {
@@ -258,7 +356,7 @@ PROJECTS<br>Task24h - Retail Management Platform (Backend - Frontend)<br>Backend
           linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
         background-size: 64px 64px;
       }
-
+ 
       .dark body::before {
         background-image:
           linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
@@ -342,6 +440,16 @@ PROJECTS<br>Task24h - Retail Management Platform (Backend - Frontend)<br>Backend
 
 <body class="antialiased selection:bg-brand-cyan/30 selection:text-slate-900 dark:selection:text-white">
 
+  <!-- Preloader -->
+  <div id="preloader"
+    class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#f4f4f2] dark:bg-[#0b0c0e] transition-opacity duration-500">
+    <div class="relative w-32 h-32 flex items-center justify-center mb-4">
+      <!-- TODO: Thay 'running-dog.gif' bằng file GIF của bạn. Nếu không có file, nó sẽ tự lùi về vòng xoay mặc định -->
+      <img src="running-dog.gif" alt="Loading..." class="w-full h-full object-contain"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    </div>
+  </div>
+
   <div class="blob-1"></div>
   <div class="blob-2"></div>
   <div class="blob-3"></div>
@@ -369,10 +477,6 @@ PROJECTS<br>Task24h - Retail Management Platform (Backend - Frontend)<br>Backend
           <!-- Moon Icon for Light Mode -->
           <i class="ph-fill ph-moon block dark:hidden text-lg"></i>
         </button>
-        <a href="mailto:Huynhgiabao541@gmail.com"
-          class="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-300/50 dark:border-white/20 bg-white/50 dark:bg-white/5 hover:bg-brand-cyan/10 hover:border-brand-cyan/50 hover:text-brand-cyan text-sm transition-all text-slate-600 dark:text-slate-300">
-          <i class="ph ph-envelope-simple"></i> Liên hệ
-        </a>
       </div>
     </div>
   </header>
@@ -385,7 +489,7 @@ PROJECTS<br>Task24h - Retail Management Platform (Backend - Frontend)<br>Backend
         <div
           class="absolute inset-0 bg-white/50 dark:bg-white/10 backdrop-blur-md border border-white/80 dark:border-white/20 rounded-full shadow-lg z-10 flex flex-col items-center justify-center overflow-hidden">
           <!-- TODO: Thay thế "avatar.jpg" bằng tên file ảnh của bạn (VD: my-photo.png) -->
-          <img src="482029458_2469570630053863_8634627401507065921_n.jpg" alt="Huỳnh Gia Bảo"
+          <img src="482029458_2469570630053863_8634627401507065921_n.jpg?v=1" alt="Huỳnh Gia Bảo"
             class="w-full h-full object-cover"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           <i class="ph-fill ph-user text-5xl text-slate-400 dark:text-slate-400 mb-1 hidden"></i>
@@ -796,6 +900,24 @@ PROJECTS<br>Task24h - Retail Management Platform (Backend - Frontend)<br>Backend
   </footer>
 
   <script>
+    // Preloader Logic
+    window.addEventListener('load', () => {
+      const minDisplayTime = 2500;
+      const startTime = Date.now()
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        preloader.style.display = 'none';
+      } else {
+        const preloader = document.getElementById('preloader');
+        setTimeout(() => {
+          preloader.classList.add('opacity-0');
+          preloader.addEventListener('transitionend', () => {
+            preloader.style.display = 'none';
+          }, { once: true });
+        }, minDisplayTime);
+      }
+    });
+
     // Theme Toggle Logic
     const themeToggleBtn = document.getElementById('theme-toggle');
     themeToggleBtn.addEventListener('click', function () {
