@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import logo from '../assets/Gemini_Generated_Image_2otfu52otfu52otf-Photoroom.svg';
+import { GlassEffect, GlassFilter } from './ui/liquid-glass';
+
 
 export default function Header() {
   const { theme, toggleTheme } = useDarkMode();
@@ -49,6 +51,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 glass-nav rounded-b-full">
+      <GlassFilter />
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2 font-bold text-base tracking-wide">
           <div
@@ -65,25 +68,28 @@ export default function Header() {
             }}
           />
         </div>
-        <nav className="hidden md:flex items-center gap-1 font-medium text-sm text-slate-600 dark:text-slate-400 p-1 rounded-full bg-slate-200/50 dark:bg-white/5 border border-slate-300/50 dark:border-white/10">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={() => setActiveSection(item.id)}
-              className={`relative px-4 py-1.5 rounded-full transition-colors z-10 ${activeSection === item.id ? 'text-slate-900 dark:text-white' : 'hover:text-brand-cyan'
-                }`}
-            >
-              {activeSection === item.id && (
-                <motion.div
-                  layoutId="nav-pill"
-                  className="absolute inset-0 bg-white/80 dark:bg-slate-700/80 rounded-full shadow-sm -z-10"
-                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                />
-              )}
-              {item.label}
-            </a>
-          ))}
+        <nav className="hidden md:flex">
+          <GlassEffect className="rounded-full px-2 py-1">
+            <div className="flex items-center gap-1 font-medium text-sm text-slate-600 dark:text-slate-400">
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={() => setActiveSection(item.id)}
+                  className={`relative px-4 py-1.5 rounded-full transition-colors z-10 ${activeSection === item.id ? 'text-slate-900 dark:text-white' : 'hover:text-brand-cyan'}`}
+                >
+                  {activeSection === item.id && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute inset-0 bg-white/80 dark:bg-slate-700/80 rounded-full shadow-sm -z-10"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </GlassEffect>
         </nav>
         <div className="flex items-center gap-4">
           <button
@@ -91,16 +97,11 @@ export default function Header() {
             className="font-medium text-sm text-slate-600 dark:text-slate-300 hover:text-brand-cyan transition-colors">
             {i18n.language === 'vi' ? 'EN' : 'VI'}
           </button>
-          <button
-            id="theme-toggle"
-            onClick={toggleTheme}
-            className="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 border border-slate-300/50 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:text-brand-cyan transition-colors">
-            {theme === 'dark' ? (
-              <i className="ph-fill ph-sun text-lg"></i>
-            ) : (
-              <i className="ph-fill ph-moon text-lg"></i>
-            )}
-          </button>
+          <GlassEffect className="rounded-full">
+            <button id="theme-toggle" onClick={toggleTheme} className="p-2 text-slate-600 dark:text-slate-300 hover:text-brand-cyan transition-colors">
+              {theme === 'dark' ? <i className="ph-fill ph-sun text-lg"></i> : <i className="ph-fill ph-moon text-lg"></i>}
+            </button>
+          </GlassEffect>
         </div>
       </div>
     </header>
