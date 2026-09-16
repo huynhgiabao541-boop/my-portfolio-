@@ -33,12 +33,12 @@ const GlassEffect: React.FC<GlassEffectProps> = ({
 
     const content = (
         <div
-            className={`relative flex font-semibold overflow-hidden text-black cursor-pointer transition-all duration-700 ${className}`}
+            className={`relative flex font-semibold overflow-hidden text-black dark:text-white cursor-pointer transition-all duration-700 ${className}`}
             style={glassStyle}
         >
             {/* Glass Layers */}
             <div
-                className="absolute inset-0 z-0 overflow-hidden rounded-inherit rounded-3xl"
+                className="absolute inset-0 z-0 overflow-hidden rounded-[inherit] rounded-3xl"
                 style={{
                     backdropFilter: "blur(3px)",
                     filter: "url(#glass-distortion)",
@@ -46,10 +46,10 @@ const GlassEffect: React.FC<GlassEffectProps> = ({
                 }}
             />
             <div
-                className="absolute inset-0 z-10 rounded-inherit bg-white/25 dark:bg-slate-950/40"
+                className="absolute inset-0 z-10 rounded-[inherit] bg-white/25 dark:bg-slate-950/40"
             />
             <div
-                className="absolute inset-0 z-20 rounded-inherit rounded-3xl overflow-hidden shadow-[inset_2px_2px_1px_0_rgba(255,255,255,0.5),inset_-1px_-1px_1px_1px_rgba(255,255,255,0.5)] dark:shadow-[inset_2px_2px_1px_0_rgba(255,255,255,0.15),inset_-1px_-1px_1px_1px_rgba(255,255,255,0.1)]"
+                className="absolute inset-0 z-20 rounded-[inherit] rounded-3xl overflow-hidden shadow-[inset_2px_2px_1px_0_rgba(255,255,255,0.5),inset_-1px_-1px_1px_1px_rgba(255,255,255,0.5)] dark:shadow-[inset_2px_2px_1px_0_rgba(255,255,255,0.15),inset_-1px_-1px_1px_1px_rgba(255,255,255,0.1)]"
             />
 
             {/* Content */}

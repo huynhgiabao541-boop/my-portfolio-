@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { LiquidButton } from "../components/ui/liquid-glass-button";
+import { GlassEffect } from "../components/ui/liquid-glass";
 
 import avatarImg from '../assets/482029458_2469570630053863_8634627401507065921_n.jpg';
 
@@ -24,11 +25,12 @@ export default function HeroSection() {
       </div>
 
       <div className="space-y-4 max-w-4xl">
-        <div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/30 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/50 dark:border-white/20 shadow-sm text-sm text-brand-cyan mb-2">
-          <i className="ph-fill ph-fish animate-pulse text-black dark:text-cyan-100"></i>
-          <span className="font-bold font-mono text-slate-800 dark:text-cyan-300">{t('hero.role')}</span>
-        </div>
+        <GlassEffect className="inline-flex rounded-full px-4 py-1.5 text-sm text-brand-cyan mb-2">
+          <span className="inline-flex items-center gap-2">
+            <i className="ph-fill ph-fish animate-pulse text-black dark:text-cyan-100"></i>
+            <span className="font-bold font-mono text-slate-800 dark:text-white">{t('hero.role')}</span>
+          </span>
+        </GlassEffect>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           {t('hero.hello')} <span className="text-gradient-cyan">Huỳnh Gia Bảo</span>
         </h1>
