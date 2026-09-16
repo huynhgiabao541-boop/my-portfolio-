@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { LiquidButton } from "../components/ui/liquid-glass-button";
 
 import avatarImg from '../assets/482029458_2469570630053863_8634627401507065921_n.jpg';
 
@@ -37,22 +38,28 @@ export default function HeroSection() {
       </div>
 
       <div className="flex items-center gap-4 pt-4">
-        <a href="#projects"
-          className="px-6 py-3 rounded-xl bg-cyan-500 dark:bg-cyan-300 text-white dark:text-slate-950 font-bold hover:bg-cyan-500 dark:hover:bg-cyan-300 hover:scale-105 transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center gap-2">
-          {t('hero.view_projects')} <i className="ph-bold ph-arrow-right"></i>
-        </a>
-        <a href="/Huynh-Gia-Bao-CV.pdf" download="Huynh-Gia-Bao-Backend.pdf"
-          className="px-6 py-3 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 text-slate-700 dark:text-slate-200 font-bold hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all flex items-center gap-2">
-          {t('hero.download_cv')} <i className="ph-bold ph-download-simple"></i>
-        </a>
-        <a href="https://www.facebook.com/h.gia.bao.370673/" target="_blank"
-          className="w-12 h-12 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all">
-          <i className="ph-fill ph-facebook-logo text-xl"></i>
-        </a>
-        <a href="mailto:Huynhgiabao541@gmail.com"
-          className="w-12 h-12 rounded-xl bg-white/30 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 hover:border-cyan-200 dark:hover:border-white/30 transition-all">
-          <i className="ph-fill ph-envelope-simple text-xl"></i>
-        </a>
+        <LiquidButton asChild className="text-black dark:text-cyan-300 font-bold">
+          <a href="#projects" className="flex items-center gap-2 font-bold text-lg">
+            <span>{t('hero.view_projects')}</span>
+            <i className="ph-bold ph-arrow-right"></i>
+          </a>
+        </LiquidButton>
+        <LiquidButton asChild className="text-slate-700 dark:text-slate-200 font-bold">
+          <a href="/Huynh-Gia-Bao-CV.pdf" download="Huynh-Gia-Bao-Backend.pdf" className="flex items-center gap-2">
+            <span>{t('hero.download_cv')}</span>
+            <i className="ph-bold ph-download-simple"></i>
+          </a>
+        </LiquidButton>
+        <LiquidButton asChild className="w-12 h-12 p-0 text-slate-600 dark:text-slate-300">
+          <a href="https://www.facebook.com/h.gia.bao.370673/" target="_blank" className="flex items-center justify-center">
+            <i className="ph-fill ph-facebook-logo text-xl"></i>
+          </a>
+        </LiquidButton>
+        <LiquidButton asChild className="w-12 h-12 p-0 text-slate-600 dark:text-slate-300">
+          <a href="mailto:Huynhgiabao541@gmail.com" className="flex items-center justify-center">
+            <i className="ph-fill ph-envelope-simple text-xl"></i>
+          </a>
+        </LiquidButton>
       </div>
     </section>
   );
