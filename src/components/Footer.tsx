@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="font-bold text-slate-900 dark:text-white mb-2">{t('nav.education')}</div>
             <p className="text-slate-600 dark:text-slate-400 text-sm">FPT University — Software Engineering</p>
-            <p className="text-slate-500 font-medium text-sm mt-1">10/2022 - {t('footer.expected')} 11/2026 • GPA: 7.3</p>
+            <p className="text-slate-500 font-medium text-sm mt-1">10/2022 - {t('footer.expected')} 11/2026 • GPA: 7.1</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 text-sm justify-center md:justify-start">

@@ -30,7 +30,7 @@ export default function ExperienceTimeline() {
               <h3 className="text-xl font-bold text-slate-900 dark:text-white">Software Engineering</h3>
               <p className="text-brand-cyan/90 dark:text-brand-cyan/80 font-mono text-base">FPT University</p>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                {t('education.gpa')} <strong className="text-slate-800 dark:text-slate-200">7.3/10</strong>.<br />
+                {t('education.gpa')} <strong className="text-slate-800 dark:text-slate-200">7.1/10</strong>.<br />
                 {t('education.desc')}
               </p>
             </div>

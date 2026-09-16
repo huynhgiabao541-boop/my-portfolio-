@@ -14,7 +14,7 @@ const resources = {
       "hero": {
         "hello": "Xin chào, tôi là",
         "role": "Backend Developer (.NET & NodeJS)",
-        "exp_highlight": "Hơn 1 năm kinh nghiệm",
+        "exp_highlight": "Gần 2 năm kinh nghiệm",
         "desc_1": " xây dựng hệ thống quy mô lớn với ",
         "desc_2": " và ",
         "desc_3": ". Đam mê thiết kế & tối ưu CSDL SQL. Từng trực tiếp phát triển phần mềm quản lý cho cơ quan nhà nước và tổ chức doanh nghiệp.",
@@ -88,7 +88,7 @@ const resources = {
       "hero": {
         "hello": "Hello, I am",
         "role": "Backend Developer (.NET & NodeJS)",
-        "exp_highlight": "Over 1 year of experience",
+        "exp_highlight": "Nearly 2 year of experience",
         "desc_1": " building large-scale systems with ",
         "desc_2": " and ",
         "desc_3": ". Passionate about designing & optimizing SQL databases. Directly developed management software for government agencies and enterprise organizations.",

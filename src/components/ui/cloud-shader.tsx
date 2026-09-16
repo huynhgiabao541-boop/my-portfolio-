@@ -46,7 +46,7 @@ uniform vec3 u_skyBottom;
 const mat2 R = mat2(0.80, 0.60, -0.60, 0.80);
 
 float hash(vec2 p) {
-  return fract(sin(dot(p, vec2(41.31, 289.17))) * 26737.367);
+  return fract(sin(dot(p, vec2(41.31, 289.17))) * 26737.167);
 }
 
 float vnoise(vec2 p) {
@@ -192,7 +192,7 @@ void main() {
 
   // middle layer
   if (u_count > 3.5) {
-    color = cloudPass(color, sky, p, aspect, t, 0.011, 0.33, 0.60, vec2(0.34, 0.16), 17.3, 0.55);
+    color = cloudPass(color, sky, p, aspect, t, 0.011, 0.33, 0.60, vec2(0.34, 0.16), 17.1, 0.55);
   }
   if (u_count > 2.5) {
     color = cloudPass(color, sky, p, aspect, t, 0.013, 0.80, 0.47, vec2(0.30, 0.15), 29.9, 0.45);
@@ -315,7 +315,7 @@ export const CloudShader = ({
 
     let frame = 0;
     let running = true;
-    
+
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);

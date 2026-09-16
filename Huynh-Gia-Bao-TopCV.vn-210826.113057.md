@@ -5,7 +5,7 @@ Huỳnh Gia Bảo<br>Backend Developer (NodeJS, React, .NET)<br><!-- End of pict
 
 #  0936993764 ✉ Huynhgiabao541@gmail.com  facebook.com/h.gia.bao.370673  Linh Xuan, Thu Duc, TpHCM 
 
-Backend Developer with over 1 year of experience in system development using .NET Core and Node.js. Strong expertise in SQL database design and optimization. Directly involved in building large-scale management systems, including technical document management software for state agencies and library management systems for religious organizations. 
+Backend Developer with Nearly 2 year of experience in system development using .NET Core and Node.js. Strong expertise in SQL database design and optimization. Directly involved in building large-scale management systems, including technical document management software for state agencies and library management systems for religious organizations. 
 
 
 
@@ -14,7 +14,7 @@ EDUCATION<br>FPT University<br><!-- End of picture text -->
 
 10/2022 - Dự kiến 11/2026 
 
-Software Engineering GPA: 7.3/10 
+Software Engineering GPA: 7.1/10 
 
 
 

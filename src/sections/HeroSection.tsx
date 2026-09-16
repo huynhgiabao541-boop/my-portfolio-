@@ -38,24 +38,24 @@ export default function HeroSection() {
       </div>
 
       <div className="flex items-center gap-4 pt-4">
-        <LiquidButton asChild className="text-black dark:text-cyan-300 font-bold">
+        <LiquidButton asChild className="text-black dark:text-white font-bold">
           <a href="#projects" className="flex items-center gap-2 font-bold text-lg">
             <span>{t('hero.view_projects')}</span>
             <i className="ph-bold ph-arrow-right"></i>
           </a>
         </LiquidButton>
-        <LiquidButton asChild className="text-slate-700 dark:text-slate-200 font-bold">
+        <LiquidButton asChild className="text-black dark:text-slate-200 font-bold">
           <a href="/Huynh-Gia-Bao-CV.pdf" download="Huynh-Gia-Bao-Backend.pdf" className="flex items-center gap-2">
             <span>{t('hero.download_cv')}</span>
             <i className="ph-bold ph-download-simple"></i>
           </a>
         </LiquidButton>
-        <LiquidButton asChild className="w-12 h-12 p-0 text-slate-600 dark:text-slate-300">
+        <LiquidButton asChild className="w-12 h-12 p-0 text-black dark:text-slate-300">
           <a href="https://www.facebook.com/h.gia.bao.370673/" target="_blank" className="flex items-center justify-center">
             <i className="ph-fill ph-facebook-logo text-xl"></i>
           </a>
         </LiquidButton>
-        <LiquidButton asChild className="w-12 h-12 p-0 text-slate-600 dark:text-slate-300">
+        <LiquidButton asChild className="w-12 h-12 p-0 text-black dark:text-slate-300">
           <a href="mailto:Huynhgiabao541@gmail.com" className="flex items-center justify-center">
             <i className="ph-fill ph-envelope-simple text-xl"></i>
           </a>
