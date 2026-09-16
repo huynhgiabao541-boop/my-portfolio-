@@ -1,5 +1,6 @@
 import { projects } from '../data/portfolioData';
 import ProjectCard from '../components/ProjectCard';
+import { GlassEffect } from '../components/ui/liquid-glass';
 import { useTranslation } from 'react-i18next';
 
 export default function ProjectList() {
@@ -7,10 +8,9 @@ export default function ProjectList() {
   return (
     <section id="projects" className="space-y-12 relative z-10">
       <div className="flex items-center gap-4 mb-8">
-        <div
-          className="w-10 h-10 rounded-lg bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center border border-blue-500/20 dark:border-blue-500/30 text-blue-500 dark:text-blue-400">
+        <GlassEffect className="w-10 h-10 rounded-lg flex items-center justify-center text-blue-800 dark:text-blue-400 font-normal">
           <i className="ph-fill ph-rocket-launch text-xl"></i>
-        </div>
+        </GlassEffect>
         <h2 className="text-3xl font-bold text-slate-900 dark:text-white">{t('projects_list.title')}</h2>
       </div>
 

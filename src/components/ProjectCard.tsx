@@ -1,14 +1,40 @@
 import SkillBadge from './SkillBadge';
+import { GlassEffect } from './ui/liquid-glass';
 import { useTranslation } from 'react-i18next';
 
 export default function ProjectCard({ project }: { project: any }) {
   const { t } = useTranslation();
   const isFeatured = project.id === 1;
 
+  if (!isFeatured) {
+    return (
+      <GlassEffect className="h-full rounded-2xl font-normal">
+        <div className="relative flex flex-col h-full p-6 overflow-hidden group">
+          <ProjectCardBody project={project} isFeatured={false} t={t} />
+        </div>
+      </GlassEffect>
+    );
+  }
+
   return (
-    <div className={isFeatured ? "prism-good-border h-full group cursor-default" : "glass-card rounded-2xl h-full flex flex-col relative overflow-hidden group"}>
-      <div className={isFeatured ? "bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl rounded-[15px] p-6 h-full flex flex-col relative overflow-hidden" : "relative z-10 flex flex-col h-full p-6"}>
-        {isFeatured && (
+    <div className="prism-good-border h-full group cursor-default">
+      <GlassEffect className="h-full w-full rounded-[15px] font-normal">
+        <div className="relative flex flex-col h-full p-6 overflow-hidden">
+          <ProjectCardBody project={project} isFeatured={true} t={t} />
+        </div>
+      </GlassEffect>
+    </div>
+  );
+}
+
+function ProjectCardBody({ project, isFeatured, t }: {
+  project: any;
+  isFeatured: boolean;
+  t: (key: string) => string;
+}) {
+  return (
+    <>
+      {isFeatured && (
           <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-cyan/20 blur-3xl rounded-full z-0 pointer-events-none group-hover:bg-brand-cyan/30 transition-all"></div>
         )}
 
@@ -65,7 +91,6 @@ export default function ProjectCard({ project }: { project: any }) {
             ))}
           </div>
         </div>
-      </div>
-    </div>
+    </>
   );
 }
