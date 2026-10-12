@@ -11,8 +11,8 @@ export default function SEO() {
     : "Huynh Gia Bao — Backend Developer";
 
   const description = i18n.language === 'vi'
-    ? "Portfolio của Huỳnh Gia Bảo - Backend Developer chuyên về .NET Core và Node.js. Gần 2 năm kinh nghiệm xây dựng hệ thống quy mô lớn, API và tối ưu cơ sở dữ liệu."
-    : "Portfolio of Huynh Gia Bao - Backend Developer specializing in .NET Core and Node.js. Nearly 2 year of experience building scalable systems, APIs and optimizing databases.";
+    ? "Portfolio của Huỳnh Gia Bảo - Backend Developer. Chuyên sâu về xây dựng hệ thống quy mô lớn, API và tối ưu cơ sở dữ liệu với .NET Core và Node.js."
+    : "Portfolio of Huynh Gia Bao - Backend Developer specializing in building scalable systems, APIs, and optimizing databases with .NET Core and Node.js.";
 
   return (
     <Helmet>
