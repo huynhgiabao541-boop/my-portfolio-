@@ -97,9 +97,14 @@ export default function Header() {
             className="font-medium text-sm text-slate-600 dark:text-slate-300 hover:text-brand-cyan transition-colors">
             {i18n.language === 'vi' ? 'EN' : 'VI'}
           </button>
-          <GlassEffect className="rounded-full">
-            <button id="theme-toggle" onClick={toggleTheme} className="p-2 text-slate-600 dark:text-slate-300 hover:text-brand-cyan transition-colors">
-              {theme === 'dark' ? <i className="ph-fill ph-sun text-lg"></i> : <i className="ph-fill ph-moon text-lg"></i>}
+          <GlassEffect className="rounded-full w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center">
+            <button
+              id="theme-toggle"
+              onClick={toggleTheme}
+              className="w-full h-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-cyan transition-colors cursor-pointer"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <i className="ph-fill ph-sun text-base sm:text-lg"></i> : <i className="ph-fill ph-moon text-base sm:text-lg"></i>}
             </button>
           </GlassEffect>
         </div>

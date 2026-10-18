@@ -39,28 +39,28 @@ export default function HeroSection() {
         </p>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-3 pt-4 w-full max-w-lg mx-auto">
-        <LiquidButton asChild className="text-black dark:text-white font-bold w-full sm:w-auto justify-center">
-          <a href="#projects" className="flex items-center justify-center gap-2 font-bold text-base sm:text-lg px-2 w-full">
+      <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
+        <LiquidButton size="lg" asChild className="text-black dark:text-white font-bold">
+          <a href="#projects" className="flex items-center gap-2 font-semibold text-sm sm:text-base px-2">
             <span>{t('hero.view_projects')}</span>
             <i className="ph-bold ph-arrow-right"></i>
           </a>
         </LiquidButton>
-        <LiquidButton asChild className="text-black dark:text-slate-200 font-bold w-full sm:w-auto justify-center">
-          <a href={`${import.meta.env.BASE_URL}Huynh-Gia-Bao-CV.pdf`} download="Huynh-Gia-Bao-Backend.pdf" className="flex items-center justify-center gap-2 font-bold text-base sm:text-lg px-2 w-full">
+        <LiquidButton size="lg" asChild className="text-black dark:text-slate-200 font-bold">
+          <a href={`${import.meta.env.BASE_URL}Huynh-Gia-Bao-CV.pdf`} download="Huynh-Gia-Bao-Backend.pdf" className="flex items-center gap-2 font-semibold text-sm sm:text-base px-2">
             <span>{t('hero.download_cv')}</span>
             <i className="ph-bold ph-download-simple"></i>
           </a>
         </LiquidButton>
-        <div className="flex items-center gap-3 justify-center mt-1 sm:mt-0">
-          <LiquidButton asChild className="w-11 h-11 sm:w-12 sm:h-12 p-0 text-black dark:text-slate-300">
+        <div className="flex items-center gap-2.5 justify-center">
+          <LiquidButton size="icon" asChild className="w-10 h-10 p-0 text-black dark:text-slate-300">
             <a href="https://www.facebook.com/h.gia.bao.370673/" target="_blank" className="flex items-center justify-center">
-              <i className="ph-fill ph-facebook-logo text-xl"></i>
+              <i className="ph-fill ph-facebook-logo text-lg"></i>
             </a>
           </LiquidButton>
-          <LiquidButton asChild className="w-11 h-11 sm:w-12 sm:h-12 p-0 text-black dark:text-slate-300">
+          <LiquidButton size="icon" asChild className="w-10 h-10 p-0 text-black dark:text-slate-300">
             <a href="mailto:Huynhgiabao541@gmail.com" className="flex items-center justify-center">
-              <i className="ph-fill ph-envelope-simple text-xl"></i>
+              <i className="ph-fill ph-envelope-simple text-lg"></i>
             </a>
           </LiquidButton>
         </div>
