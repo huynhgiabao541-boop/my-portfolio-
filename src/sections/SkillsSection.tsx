@@ -43,24 +43,24 @@ export default function SkillsSection() {
   const activeTabData = tabs.find(tab => tab.id === activeTab)!;
 
   return (
-    <section id="skills" className="space-y-12 relative z-10">
-      <div className="flex items-center gap-4 mb-8">
+    <section id="skills" className="space-y-8 sm:space-y-12 relative z-10">
+      <div className="flex items-center gap-4 mb-4 sm:mb-8">
         <GlassEffect className="w-10 h-10 rounded-lg flex items-center justify-center text-brand-cyan dark:text-brand-cyan font-normal">
           <i className="ph-fill ph-code text-xl"></i>
         </GlassEffect>
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">{t('skills_section.title')}</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">{t('skills_section.title')}</h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
 
         {/* Cột Trái: Nội dung & Hình ảnh (Style giống ProjectCard) */}
-        <div className=" h-full group cursor-default min-h-[400px]">
+        <div className="h-full group cursor-default min-h-[320px] sm:min-h-[400px]">
           <GlassEffect className="h-full w-full rounded-[15px] font-normal">
-            <div className="relative flex flex-col h-full p-8 overflow-hidden">
+            <div className="relative flex flex-col h-full p-5 sm:p-8 overflow-hidden">
 
               {/* Hình ảnh với mask mờ dần xuống dưới */}
               <div
-                className="absolute top-0 left-0 right-0 h-80 z-0 opacity-40 dark:opacity-30 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"
+                className="absolute top-0 left-0 right-0 h-64 sm:h-80 z-0 opacity-40 dark:opacity-30 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none"
                 style={{
                   WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
                   maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)'
@@ -74,11 +74,11 @@ export default function SkillsSection() {
               </div>
 
               {/* Nội dung chữ */}
-              <div className="relative z-10 flex flex-col h-full mt-auto justify-end pt-32">
-                <h3 className="font-bold text-3xl text-slate-900 dark:text-white mb-4">
+              <div className="relative z-10 flex flex-col h-full mt-auto justify-end pt-24 sm:pt-32">
+                <h3 className="font-bold text-2xl sm:text-3xl text-slate-900 dark:text-white mb-3 sm:mb-4">
                   {activeTabData.label}
                 </h3>
-                <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
                   {activeTabData.content}
                 </p>
               </div>

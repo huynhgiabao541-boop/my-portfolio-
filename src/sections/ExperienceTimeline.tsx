@@ -5,18 +5,18 @@ import { useTranslation } from 'react-i18next';
 export default function ExperienceTimeline() {
   const { t } = useTranslation();
   return (
-    <div className="space-y-32">
+    <div className="space-y-16 sm:space-y-32">
       {/* Education */}
-      <section id="education" className="space-y-12 relative z-10">
+      <section id="education" className="space-y-8 sm:space-y-12 relative z-10">
         <div className="flex items-center gap-4">
           <GlassEffect className="w-10 h-10 rounded-lg flex items-center justify-center text-brand-cyan font-normal">
             <i className="ph-fill ph-graduation-cap text-xl"></i>
           </GlassEffect>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white">{t('nav.education')}</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">{t('nav.education')}</h2>
         </div>
 
         <div className="space-y-6">
-          <GlassEffect className="w-full rounded-3xl p-6 md:p-8 font-normal">
+          <GlassEffect className="w-full rounded-2xl sm:rounded-3xl p-5 sm:p-8 font-normal">
             <div className="relative flex flex-col md:flex-row gap-6 md:gap-12 overflow-hidden group">
               <div
                 className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 blur-3xl rounded-full z-0 pointer-events-none group-hover:bg-brand-cyan/20 transition-all">
@@ -40,17 +40,17 @@ export default function ExperienceTimeline() {
       </section>
 
       {/* Experience */}
-      <section id="experience" className="space-y-12 relative z-10">
+      <section id="experience" className="space-y-8 sm:space-y-12 relative z-10">
         <div className="flex items-center gap-4">
           <GlassEffect className="w-10 h-10 rounded-lg flex items-center justify-center text-brand-cyan font-normal">
             <i className="ph-fill ph-briefcase text-xl"></i>
           </GlassEffect>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white">{t('nav.experience')}</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">{t('nav.experience')}</h2>
         </div>
 
         <div className="space-y-6">
           {experiences.map((exp) => (
-            <GlassEffect key={exp.id} className="w-full rounded-3xl p-6 md:p-8 font-normal">
+            <GlassEffect key={exp.id} className="w-full rounded-2xl sm:rounded-3xl p-5 sm:p-8 font-normal">
               <div className="relative flex flex-col md:flex-row gap-6 md:gap-12 overflow-hidden group">
                 <div
                   className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 blur-3xl rounded-full z-0 pointer-events-none group-hover:bg-brand-cyan/20 transition-all">

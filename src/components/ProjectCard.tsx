@@ -9,7 +9,7 @@ export default function ProjectCard({ project }: { project: any }) {
   if (!isFeatured) {
     return (
       <GlassEffect className="h-full rounded-2xl font-normal">
-        <div className="relative flex flex-col h-full p-6 overflow-hidden group">
+        <div className="relative flex flex-col h-full p-5 sm:p-6 overflow-hidden group">
           <ProjectCardBody project={project} isFeatured={false} t={t} />
         </div>
       </GlassEffect>
@@ -19,7 +19,7 @@ export default function ProjectCard({ project }: { project: any }) {
   return (
     <div className="prism-good-border h-full group cursor-default">
       <GlassEffect className="h-full w-full rounded-[15px] font-normal">
-        <div className="relative flex flex-col h-full p-6 overflow-hidden">
+        <div className="relative flex flex-col h-full p-5 sm:p-6 overflow-hidden">
           <ProjectCardBody project={project} isFeatured={true} t={t} />
         </div>
       </GlassEffect>
@@ -55,8 +55,8 @@ function ProjectCardBody({ project, isFeatured, t }: {
         )}
 
         <div className="relative z-10 flex flex-col h-full pt-4">
-          <div className="flex justify-between items-start mb-4">
-            <h3 className="font-bold text-xl text-slate-900 dark:text-white flex items-center gap-2 flex-wrap">
+          <div className="flex justify-between items-start mb-3 sm:mb-4">
+            <h3 className="font-bold text-lg sm:text-xl text-slate-900 dark:text-white flex items-center gap-2 flex-wrap">
               {project.name}
               {isFeatured && (
                 <span className="px-2 py-0.5 rounded bg-gradient-to-r from-brand-cyan to-blue-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">

@@ -4,11 +4,11 @@ import footerLogo from '../assets/ChatGPT Image Sep 12, 2026, 01_48_26 PM.svg';
 export default function Footer() {
   const { t } = useTranslation();
   return (
-    <footer className="mt-12 glass-nav border-t-0 border-b-0 rounded-t-[30%] relative z-10">
-      <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <footer className="mt-12 glass-nav border-t-0 border-b-0 rounded-t-3xl md:rounded-t-[30%] relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Cột trái: SVG Image */}
         <div className="flex justify-center md:justify-start">
-          <img src={footerLogo} alt="Footer Artwork" className="w-full max-w-[400px] h-auto object-contain dark:invert" />
+          <img src={footerLogo} alt="Footer Artwork" className="w-full max-w-[280px] sm:max-w-[400px] h-auto object-contain dark:invert" />
         </div>
 
         {/* Cột phải: Nội dung hiện tại */}

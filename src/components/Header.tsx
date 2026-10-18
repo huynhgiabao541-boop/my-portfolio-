@@ -52,7 +52,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 glass-nav rounded-b-full">
       <GlassFilter />
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2 font-bold text-base tracking-wide">
           <div
             className="h-10 w-[87px] bg-cyan-600 dark:bg-cyan-300 transition-colors"

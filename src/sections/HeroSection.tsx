@@ -24,44 +24,46 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="space-y-4 max-w-4xl">
-        <GlassEffect className="inline-flex rounded-full px-4 py-1.5 text-sm text-brand-cyan mb-2">
+      <div className="space-y-4 max-w-4xl px-2">
+        <GlassEffect className="inline-flex rounded-full px-3 sm:px-4 py-1.5 text-xs sm:text-sm text-brand-cyan mb-2">
           <span className="inline-flex items-center gap-2">
             <i className="ph-fill ph-fish animate-pulse text-black dark:text-cyan-100"></i>
             <span className="font-bold font-mono text-slate-800 dark:text-white">{t('hero.role')}</span>
           </span>
         </GlassEffect>
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
           {t('hero.hello')} <span className="text-gradient-cyan">Huỳnh Gia Bảo</span>
         </h1>
-        <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
+        <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
           <span className="underline decoration-brand-cyan decoration-2 underline-offset-4 font-semibold text-slate-800 dark:text-slate-200">{t('hero.exp_highlight')}</span>{t('hero.desc_1')}<strong className="text-slate-800 dark:text-slate-200">.NET Core</strong>{t('hero.desc_2')}<strong className="text-slate-800 dark:text-slate-200">Node.js</strong>{t('hero.desc_3')}
         </p>
       </div>
 
-      <div className="flex items-center gap-4 pt-4">
-        <LiquidButton asChild className="text-black dark:text-white font-bold">
-          <a href="#projects" className="flex items-center gap-2 font-bold text-lg">
+      <div className="flex flex-wrap items-center justify-center gap-3 pt-4 w-full max-w-lg mx-auto">
+        <LiquidButton asChild className="text-black dark:text-white font-bold w-full sm:w-auto justify-center">
+          <a href="#projects" className="flex items-center justify-center gap-2 font-bold text-base sm:text-lg px-2 w-full">
             <span>{t('hero.view_projects')}</span>
             <i className="ph-bold ph-arrow-right"></i>
           </a>
         </LiquidButton>
-        <LiquidButton asChild className="text-black dark:text-slate-200 font-bold">
-          <a href={`${import.meta.env.BASE_URL}Huynh-Gia-Bao-CV.pdf`} download="Huynh-Gia-Bao-Backend.pdf" className="flex items-center gap-2">
+        <LiquidButton asChild className="text-black dark:text-slate-200 font-bold w-full sm:w-auto justify-center">
+          <a href={`${import.meta.env.BASE_URL}Huynh-Gia-Bao-CV.pdf`} download="Huynh-Gia-Bao-Backend.pdf" className="flex items-center justify-center gap-2 font-bold text-base sm:text-lg px-2 w-full">
             <span>{t('hero.download_cv')}</span>
             <i className="ph-bold ph-download-simple"></i>
           </a>
         </LiquidButton>
-        <LiquidButton asChild className="w-12 h-12 p-0 text-black dark:text-slate-300">
-          <a href="https://www.facebook.com/h.gia.bao.370673/" target="_blank" className="flex items-center justify-center">
-            <i className="ph-fill ph-facebook-logo text-xl"></i>
-          </a>
-        </LiquidButton>
-        <LiquidButton asChild className="w-12 h-12 p-0 text-black dark:text-slate-300">
-          <a href="mailto:Huynhgiabao541@gmail.com" className="flex items-center justify-center">
-            <i className="ph-fill ph-envelope-simple text-xl"></i>
-          </a>
-        </LiquidButton>
+        <div className="flex items-center gap-3 justify-center mt-1 sm:mt-0">
+          <LiquidButton asChild className="w-11 h-11 sm:w-12 sm:h-12 p-0 text-black dark:text-slate-300">
+            <a href="https://www.facebook.com/h.gia.bao.370673/" target="_blank" className="flex items-center justify-center">
+              <i className="ph-fill ph-facebook-logo text-xl"></i>
+            </a>
+          </LiquidButton>
+          <LiquidButton asChild className="w-11 h-11 sm:w-12 sm:h-12 p-0 text-black dark:text-slate-300">
+            <a href="mailto:Huynhgiabao541@gmail.com" className="flex items-center justify-center">
+              <i className="ph-fill ph-envelope-simple text-xl"></i>
+            </a>
+          </LiquidButton>
+        </div>
       </div>
     </section>
   );

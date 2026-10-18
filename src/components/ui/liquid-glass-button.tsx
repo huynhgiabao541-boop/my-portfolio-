@@ -101,9 +101,10 @@ function LiquidButton({
     }) {
 
     const Comp = asChild ? Slot : "button"
+    const isFullWidth = className?.includes("w-full");
 
     return (
-        <div className="relative inline-flex">
+        <div className={cn("relative inline-flex", isFullWidth && "w-full justify-center")}>
 
             {/* Glass effect */}
             <div

@@ -50,7 +50,7 @@ export default function App() {
       <AnimatedBlobs />
       <Header />
 
-      <main className="max-w-5xl mx-auto px-6 pt-32 pb-24 space-y-32">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-24 space-y-20 sm:space-y-32">
         <ScrollReveal>
           <HeroSection />
         </ScrollReveal>
