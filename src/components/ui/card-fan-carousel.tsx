@@ -490,7 +490,7 @@ export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
                         <SkillBadge
                           key={idx}
                           skill={tech}
-                          className="text-[11px] py-0.5 px-2 bg-white/10 text-slate-200 border-white/15"
+                          className="text-[11px] font-medium py-0.5 px-2 bg-white/15 text-white border-white/20"
                         />
                       ))}
                     </div>
@@ -644,7 +644,7 @@ export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
                       <SkillBadge
                         key={idx}
                         skill={tech}
-                        className="text-xs py-1 px-3 bg-cyan-500/15 text-cyan-200 border-cyan-500/30"
+                        className="text-xs font-medium py-1 px-3 bg-white/15 text-white border-white/20"
                       />
                     ))}
                   </div>
