@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { GlassEffect } from '../components/ui/liquid-glass';
 import { useTranslation } from 'react-i18next';
-import { skills } from '../data/portfolioData';
 
 type SkillCategory = 'backend' | 'database' | 'devops' | 'frontend';
 
@@ -12,30 +11,22 @@ interface TechItem {
   highlight?: boolean;
 }
 
-interface CategoryData {
+interface CategoryConfig {
   id: SkillCategory;
-  label: string;
   icon: string;
   image: string;
-  tagline: string;
-  description: string;
   techs: TechItem[];
-  highlights: string[];
 }
 
 export default function SkillsSection() {
   const { t } = useTranslation();
-  // Mặc định chọn Backend, người dùng hover hoặc click sẽ đổi card đang mở
   const [activeCategory, setActiveCategory] = useState<SkillCategory>('backend');
 
-  const categories: CategoryData[] = [
+  const categoriesConfig: CategoryConfig[] = [
     {
       id: 'backend',
-      label: 'Backend & Architecture',
       icon: 'ph-cpu',
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200',
-      tagline: 'Core Focus & High Scalability',
-      description: 'Chuyên sâu xây dựng RESTful APIs quy mô lớn, áp dụng Clean Architecture, CQRS pattern, tích hợp background jobs tự động và xử lý nghiệp vụ phức tạp.',
       techs: [
         { name: ".NET (C#)", icon: "ph-fill ph-file-c-sharp", highlight: true },
         { name: "Node.js (Express / NestJS)", icon: "ph-fill ph-code", highlight: true },
@@ -45,19 +36,11 @@ export default function SkillsSection() {
         { name: "GraphQL", icon: "ph-fill ph-graph" },
         { name: "Hangfire", icon: "ph-fill ph-clock" },
       ],
-      highlights: [
-        "Thiết kế hệ thống đa tầng bảo trì dễ dàng và tách bạch domain logic.",
-        "Xử lý background task tự động với Hangfire.",
-        "Phân quyền đa tầng và JWT authentication an toàn."
-      ]
     },
     {
       id: 'database',
-      label: 'Database & Tuning',
       icon: 'ph-database',
       image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&q=80&w=1200',
-      tagline: 'Relational DBs, Modeling & Optimization',
-      description: 'Đam mê thiết kế cơ sở dữ liệu quan hệ chặt chẽ, tối ưu hóa chỉ mục (Indexes), Store Procedures và xử lý truy vấn thời gian thực cho dữ liệu khối lượng lớn.',
       techs: [
         { name: "SQL Server", icon: "ph-fill ph-database", highlight: true },
         { name: "PostgreSQL", icon: "ph-fill ph-database", highlight: true },
@@ -66,19 +49,11 @@ export default function SkillsSection() {
         { name: "EF Core", icon: "ph-fill ph-tree-structure", highlight: true },
         { name: "Query Optimization", icon: "ph-fill ph-lightning", highlight: true },
       ],
-      highlights: [
-        "Thiết kế và chuẩn hóa schema dữ liệu cho giải đấu và chuỗi bán lẻ ERP.",
-        "Tối ưu SQL Server hỗ trợ xử lý dữ liệu QA/QC thời gian thực.",
-        "Viết stored procedures và indexing tăng tốc độ truy vấn."
-      ]
     },
     {
       id: 'devops',
-      label: 'DevOps & Cloud',
       icon: 'ph-hard-drives',
       image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=1200',
-      tagline: 'Containerization, Automation & Deployment',
-      description: 'Đóng gói sản phẩm bằng Docker, xây dựng pipeline tích hợp và triển khai tự động (CI/CD), quản lý server VPS độc lập và tích hợp lưu trữ đám mây.',
       techs: [
         { name: "Docker", icon: "ph-fill ph-package", highlight: true },
         { name: "Portainer", icon: "ph-fill ph-cube" },
@@ -86,19 +61,11 @@ export default function SkillsSection() {
         { name: "Cloud Server (VPS)", icon: "ph-fill ph-cloud", highlight: true },
         { name: "AWS S3", icon: "ph-fill ph-hard-drive" },
       ],
-      highlights: [
-        "Tự động hóa build, test và deploy qua Jenkins pipeline.",
-        "Container hóa các ứng dụng .NET và Node.js chạy ổn định trên Docker.",
-        "Tích hợp AWS S3 lưu trữ tệp tin và báo cáo."
-      ]
     },
     {
       id: 'frontend',
-      label: 'Frontend & Tools',
       icon: 'ph-paint-brush',
       image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=1200',
-      tagline: 'UI Integration, DevTools & Soft Skills',
-      description: 'Khả năng xây dựng giao diện hiện đại, responsive mượt mà với React, thành thạo công cụ phát triển chuyên nghiệp và kỹ năng phối hợp nhóm hiệu quả.',
       techs: [
         { name: "React", icon: "ph-fill ph-atom", highlight: true },
         { name: "Tailwind CSS", icon: "ph-fill ph-paint-brush", highlight: true },
@@ -107,13 +74,10 @@ export default function SkillsSection() {
         { name: "Git / GitHub", icon: "ph-fill ph-git-pull-request", highlight: true },
         { name: "Postman", icon: "ph-fill ph-paper-plane-tilt" },
       ],
-      highlights: [
-        "Xây dựng giao diện ERP dashboard tương tác với GraphQL API.",
-        "Quy trình làm việc chuẩn Git Flow, quản lý mã nguồn chặt chẽ.",
-        "Kỹ năng mềm: Làm việc nhóm, thuyết trình và giải quyết vấn đề."
-      ]
     }
   ];
+
+  const softSkillIndices = [0, 1, 2];
 
   return (
     <section id="skills" className="space-y-6 sm:space-y-8 relative z-10">
@@ -129,8 +93,16 @@ export default function SkillsSection() {
 
       {/* 4 Card Expandable Gallery (Accordion ngang trên Desktop, dọc trên Mobile) */}
       <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 w-full min-h-[580px] lg:h-[500px]">
-        {categories.map((cat) => {
+        {categoriesConfig.map((cat) => {
           const isExpanded = activeCategory === cat.id;
+          const label = t(`skills_section.categories.${cat.id}.label`);
+          const tagline = t(`skills_section.categories.${cat.id}.tagline`);
+          const description = t(`skills_section.categories.${cat.id}.desc`);
+          const highlights = [
+            t(`skills_section.categories.${cat.id}.highlight_1`),
+            t(`skills_section.categories.${cat.id}.highlight_2`),
+            t(`skills_section.categories.${cat.id}.highlight_3`),
+          ];
 
           return (
             <motion.div
@@ -144,7 +116,6 @@ export default function SkillsSection() {
               }`}
               style={{ flex: 1 }}
               animate={{
-                // Trên Desktop: Bung rộng gấp 3 lần theo chiều ngang
                 flex: isExpanded ? 3.2 : 0.75,
               }}
               transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -152,11 +123,11 @@ export default function SkillsSection() {
               {/* Full Background Image */}
               <img
                 src={cat.image}
-                alt={cat.label}
+                alt={label}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
 
-              {/* Gradient & Dark Overlay (Tối hơn khi thu nhỏ, sáng và rõ khi mở rộng) */}
+              {/* Gradient & Dark Overlay */}
               <div
                 className={`absolute inset-0 transition-opacity duration-500 ${
                   isExpanded
@@ -172,9 +143,8 @@ export default function SkillsSection() {
                     <i className={`ph-fill ${cat.icon}`}></i>
                   </div>
 
-                  {/* Chữ đứng dọc trên desktop */}
                   <div className="lg:[writing-mode:vertical-rl] lg:rotate-180 font-bold text-base sm:text-lg text-white tracking-wide">
-                    {cat.label}
+                    {label}
                   </div>
 
                   <span className="w-2 h-2 rounded-full bg-brand-cyan/80"></span>
@@ -196,23 +166,23 @@ export default function SkillsSection() {
                         <i className={`ph-fill ${cat.icon}`}></i>
                       </div>
                       <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-brand-cyan/20 border border-brand-cyan/30 text-brand-cyan">
-                        {cat.tagline}
+                        {tagline}
                       </span>
                     </div>
 
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                      {cat.label}
+                      {label}
                     </h3>
 
                     <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
-                      {cat.description}
+                      {description}
                     </p>
                   </div>
 
                   {/* Middle: Badges Matrix */}
                   <div className="my-auto py-4 space-y-2.5">
                     <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
-                      Công nghệ & Frameworks
+                      {t('skills_section.title')}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {cat.techs.map((tech) => (
@@ -231,13 +201,13 @@ export default function SkillsSection() {
                     </div>
                   </div>
 
-                  {/* Bottom: Highlights & Soft Skills */}
+                  {/* Bottom: Highlights */}
                   <div className="pt-3 border-t border-white/15 space-y-2">
                     <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
-                      Điểm nổi bật
+                      Highlights
                     </h4>
                     <ul className="space-y-1.5 text-xs sm:text-sm text-slate-300">
-                      {cat.highlights.map((item, idx) => (
+                      {highlights.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <i className="ph-bold ph-check text-brand-cyan mt-0.5 shrink-0"></i>
                           <span>{item}</span>
@@ -252,20 +222,32 @@ export default function SkillsSection() {
         })}
       </div>
 
-      {/* Dòng tóm tắt kỹ năng mềm */}
+      {/* Dòng tóm tắt kỹ năng mềm - 3 màu Đỏ Vàng Cam */}
       <div className="pt-2 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400">
         <span className="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
           <i className="ph-fill ph-users-three text-brand-cyan"></i>
           {t('skills_section.tools_and_soft_skills')}:
         </span>
-        {skills.softSkills.map((softSkill, idx) => (
-          <span
-            key={idx}
-            className="px-2.5 py-1 rounded-md bg-slate-200/60 dark:bg-white/5 border border-slate-300/60 dark:border-white/10 font-medium"
-          >
-            {softSkill}
-          </span>
-        ))}
+        {softSkillIndices.map((idx) => {
+          const colorfulGlass = [
+            // Đỏ kính nhẹ nhàng
+            'bg-red-500/12 dark:bg-red-500/15 text-red-600 dark:text-red-300 border-red-500/25 dark:border-red-400/25 shadow-xs shadow-red-500/5',
+            // Vàng kính nhẹ nhàng
+            'bg-amber-400/15 dark:bg-amber-400/15 text-amber-700 dark:text-amber-200 border-amber-400/30 dark:border-amber-400/25 shadow-xs shadow-amber-400/5',
+            // Cam kính nhẹ nhàng
+            'bg-orange-500/12 dark:bg-orange-500/15 text-orange-600 dark:text-orange-300 border-orange-500/25 dark:border-orange-400/25 shadow-xs shadow-orange-500/5',
+          ];
+          const glassColor = colorfulGlass[idx % colorfulGlass.length];
+
+          return (
+            <span
+              key={idx}
+              className={`px-3 py-1 rounded-md border font-medium backdrop-blur-md transition-all duration-300 ${glassColor}`}
+            >
+              {t(`skills_section.soft_skills.${idx}`)}
+            </span>
+          );
+        })}
       </div>
     </section>
   );

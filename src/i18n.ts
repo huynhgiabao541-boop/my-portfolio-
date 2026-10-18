@@ -41,6 +41,11 @@ const resources = {
       },
       "projects_list": {
         "title": "Dự án nổi bật",
+        "click_to_view": "Nhấn để xem đầy đủ",
+        "modal_desc_title": "Mô tả dự án & Trách nhiệm thực hiện",
+        "modal_tech_title": "Công nghệ sử dụng (Tech Stack)",
+        "modal_view_site": "Xem trang web dự án",
+        "modal_zoom_title": "Phóng to xem chi tiết",
         "1": {
           "role": "Project Leader · Backend",
           "description": "Vai trò Project Leader, dẫn dắt đội ngũ phát triển bằng .NET Core, Clean Architecture và CQRS với MediatR. Phát triển các module cốt lõi như Authentication & Authorization, quản lý Sự kiện, xử lý khiếu nại. Thiết kế và tối ưu CSDL SQL Server hỗ trợ cấu trúc giải đấu phức tạp đa vai trò."
@@ -69,7 +74,45 @@ const resources = {
       "skills_section": {
         "title": "Kỹ năng & Chuyên môn",
         "tools_and_soft_skills": "Công cụ & Kỹ năng mềm",
-        "soft_skills_list": "Làm việc nhóm, Thuyết trình, Giải quyết vấn đề"
+        "soft_skills": {
+          "0": "Làm việc nhóm",
+          "1": "Thuyết trình",
+          "2": "Giải quyết vấn đề"
+        },
+        "categories": {
+          "backend": {
+            "label": "Backend & Kiến trúc",
+            "tagline": "Trọng tâm cốt lõi & Khả năng mở rộng cao",
+            "desc": "Chuyên sâu xây dựng RESTful APIs quy mô lớn, áp dụng Clean Architecture, CQRS pattern, tích hợp background jobs tự động và xử lý nghiệp vụ phức tạp.",
+            "highlight_1": "Thiết kế hệ thống đa tầng bảo trì dễ dàng và tách bạch domain logic.",
+            "highlight_2": "Xử lý background task tự động với Hangfire.",
+            "highlight_3": "Phân quyền đa tầng và JWT authentication an toàn."
+          },
+          "database": {
+            "label": "Cơ sở dữ liệu & Tối ưu",
+            "tagline": "CSDL quan hệ, Mô hình hóa & Hiệu năng",
+            "desc": "Đam mê thiết kế cơ sở dữ liệu quan hệ chặt chẽ, tối ưu hóa chỉ mục (Indexes), Store Procedures và xử lý truy vấn thời gian thực cho dữ liệu khối lượng lớn.",
+            "highlight_1": "Thiết kế và chuẩn hóa schema dữ liệu cho giải đấu và chuỗi bán lẻ ERP.",
+            "highlight_2": "Tối ưu SQL Server hỗ trợ xử lý dữ liệu QA/QC thời gian thực.",
+            "highlight_3": "Viết stored procedures và indexing tăng tốc độ truy vấn."
+          },
+          "devops": {
+            "label": "DevOps & Đám mây",
+            "tagline": "Container hóa, Tự động hóa & Triển khai",
+            "desc": "Đóng gói sản phẩm bằng Docker, xây dựng pipeline tích hợp và triển khai tự động (CI/CD), quản lý server VPS độc lập và tích hợp lưu trữ đám mây.",
+            "highlight_1": "Tự động hóa build, test và deploy qua Jenkins pipeline.",
+            "highlight_2": "Container hóa các ứng dụng .NET và Node.js chạy ổn định trên Docker.",
+            "highlight_3": "Tích hợp AWS S3 lưu trữ tệp tin và báo cáo."
+          },
+          "frontend": {
+            "label": "Frontend & Công cụ",
+            "tagline": "Tích hợp giao diện & Kỹ năng mềm",
+            "desc": "Khả năng xây dựng giao diện hiện đại, responsive mượt mà với React, thành thạo công cụ phát triển chuyên nghiệp và kỹ năng phối hợp nhóm hiệu quả.",
+            "highlight_1": "Xây dựng giao diện ERP dashboard tương tác với GraphQL API.",
+            "highlight_2": "Quy trình làm việc chuẩn Git Flow, quản lý mã nguồn chặt chẽ.",
+            "highlight_3": "Kỹ năng mềm: Làm việc nhóm, thuyết trình và giải quyết vấn đề."
+          }
+        }
       },
       "footer": {
         "expected": "Dự kiến"
@@ -115,6 +158,11 @@ const resources = {
       },
       "projects_list": {
         "title": "Featured Projects",
+        "click_to_view": "Click to view full details",
+        "modal_desc_title": "Project Overview & Key Responsibilities",
+        "modal_tech_title": "Technologies Used (Tech Stack)",
+        "modal_view_site": "Visit Project Website",
+        "modal_zoom_title": "Zoom in to view details",
         "1": {
           "role": "Project Leader · Backend",
           "description": "Acted as Project Leader, leading the development team using .NET Core, Clean Architecture, and CQRS with MediatR. Developed core modules such as Authentication & Authorization, Event management, and complaint handling. Designed and optimized SQL Server database to support complex multi-role tournament structures."
@@ -143,7 +191,45 @@ const resources = {
       "skills_section": {
         "title": "Skills & Expertise",
         "tools_and_soft_skills": "Tools & Soft Skills",
-        "soft_skills_list": "Teamwork, Presentation, Problem Solving"
+        "soft_skills": {
+          "0": "Teamwork",
+          "1": "Presentation",
+          "2": "Problem Solving"
+        },
+        "categories": {
+          "backend": {
+            "label": "Backend & Architecture",
+            "tagline": "Core Focus & High Scalability",
+            "desc": "Specialized in building large-scale RESTful APIs, applying Clean Architecture, CQRS pattern, automated background tasks, and handling complex business logic.",
+            "highlight_1": "Design multi-tier systems with high maintainability and domain separation.",
+            "highlight_2": "Automated background task processing with Hangfire.",
+            "highlight_3": "Multi-level authorization and secure JWT authentication."
+          },
+          "database": {
+            "label": "Database & Tuning",
+            "tagline": "Relational DBs, Modeling & Optimization",
+            "desc": "Passionate about designing robust relational databases, optimizing indexes, stored procedures, and handling real-time queries for large data volumes.",
+            "highlight_1": "Design and normalize data schemas for tournaments and ERP retail chains.",
+            "highlight_2": "Optimize SQL Server to support real-time QA/QC inspection data.",
+            "highlight_3": "Author stored procedures and indexing to significantly accelerate queries."
+          },
+          "devops": {
+            "label": "DevOps & Cloud",
+            "tagline": "Containerization, Automation & Deployment",
+            "desc": "Containerize applications with Docker, build automated CI/CD pipelines, manage independent VPS servers, and integrate cloud storage.",
+            "highlight_1": "Automated build, test, and deployment via Jenkins pipelines.",
+            "highlight_2": "Containerize .NET and Node.js applications with stable Docker hosting.",
+            "highlight_3": "Integrate AWS S3 for file storage and automated reporting."
+          },
+          "frontend": {
+            "label": "Frontend & Tools",
+            "tagline": "UI Integration & Soft Skills",
+            "desc": "Capability to build modern, responsive UIs with React, proficiency in industry dev tools, and effective team collaboration skills.",
+            "highlight_1": "Build ERP dashboard interfaces interacting with GraphQL APIs.",
+            "highlight_2": "Standard Git Flow workflow and rigorous code review.",
+            "highlight_3": "Soft skills: Teamwork, technical presentation, and problem solving."
+          }
+        }
       },
       "footer": {
         "expected": "Expected"

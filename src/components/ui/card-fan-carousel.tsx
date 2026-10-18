@@ -1,8 +1,8 @@
-"use client";
-
 import { useState, useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import SkillBadge from "../SkillBadge";
+import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface ProjectCardItem {
   id: number;
@@ -63,6 +63,7 @@ const ARROW_CLASSES =
   "relative flex items-center justify-center rounded-full border-[1.5px] border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 backdrop-blur-[16px] text-black/40 dark:text-white/55 cursor-pointer shrink-0 z-30 outline-none shadow-[0_4px_20px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:border-black/25 dark:hover:border-white/25 hover:text-black/70 dark:hover:text-white/80 active:opacity-70 transition-colors duration-300 before:content-[''] before:absolute before:inset-[3px] before:rounded-full before:border before:border-black/[0.04] dark:before:border-white/[0.04] before:pointer-events-none";
 
 export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const isAnimating = useRef(false);
   const hasEntered = useRef(false);
@@ -72,6 +73,26 @@ export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
   const totalCards = projects.length;
   const needsPagination = totalCards > 1;
   const [centerIndex, setCenterIndex] = useState(0);
+
+  // State phóng to modal chi tiết dự án
+  const [selectedProject, setSelectedProject] = useState<ProjectCardItem | null>(null);
+
+  // Khóa cuộn trang và lắng nghe phím Escape khi Modal mở
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedProject(null);
+      }
+    };
+    if (selectedProject) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedProject]);
 
   const getVisibleMap = useCallback(
     (center: number) => {
@@ -135,7 +156,6 @@ export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
       }
     };
 
-    // Đảm bảo không bị kẹt cờ animating
     const fallbackTimer = setTimeout(() => {
       isAnimating.current = false;
     }, 1200);
@@ -211,9 +231,7 @@ export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
 
     prevVisible.current = new Set(visibleMap.keys());
 
-    // ============================================
-    // HIỆU ỨNG HOVER ĐẨY CÁNH QUẠT (CARD FAN HOVER)
-    // ============================================
+    // Hover Fan Effect
     const visibleEntries: { el: HTMLElement; slot: number }[] = [];
     cardElements.forEach((el, i) => {
       const slot = visibleMap.get(i);
@@ -342,6 +360,27 @@ export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
     </svg>
   );
 
+  // Điều hướng trong Modal phóng to
+  const openNextModal = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedProject) {
+      const currentIdx = projects.findIndex((p) => p.id === selectedProject.id);
+      const nextIdx = (currentIdx + 1) % totalCards;
+      setSelectedProject(projects[nextIdx]);
+      setCenterIndex(nextIdx);
+    }
+  };
+
+  const openPrevModal = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedProject) {
+      const currentIdx = projects.findIndex((p) => p.id === selectedProject.id);
+      const prevIdx = (currentIdx - 1 + totalCards) % totalCards;
+      setSelectedProject(projects[prevIdx]);
+      setCenterIndex(prevIdx);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center w-full relative z-20 py-2">
       {/* Khung chứa các card xòe quạt */}
@@ -358,15 +397,18 @@ export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
                 onClick={() => {
                   if (!isCenter && !isAnimating.current) {
                     setCenterIndex(index);
+                  } else if (isCenter) {
+                    // Click vào card ở giữa để phóng to
+                    setSelectedProject(project);
                   }
                 }}
                 className={`fan-project-card absolute w-[280px] sm:w-[340px] md:w-[360px] h-[390px] sm:h-[430px] rounded-2xl cursor-pointer transition-shadow duration-300 ${
                   isCenter
-                    ? "shadow-2xl shadow-brand-cyan/20 ring-1 ring-brand-cyan/40"
+                    ? "shadow-2xl shadow-brand-cyan/25 ring-2 ring-brand-cyan/50"
                     : "shadow-lg opacity-85 hover:opacity-100"
                 }`}
               >
-                <div className="h-full w-full rounded-2xl overflow-hidden relative flex flex-col justify-between p-5 sm:p-6 border border-white/20 dark:border-white/10 shadow-2xl">
+                <div className="h-full w-full rounded-2xl overflow-hidden relative flex flex-col justify-between p-5 sm:p-6 border border-white/20 dark:border-white/10 shadow-2xl group text-white">
                   {/* Full Background Image */}
                   {project.image ? (
                     <img
@@ -378,53 +420,77 @@ export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
                     <div className="absolute inset-0 w-full h-full bg-slate-800 z-0" />
                   )}
 
-                  {/* Gradient Overlay để text luôn rõ nét và nổi bật trên ảnh */}
+                  {/* Gradient Overlay */}
                   <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-900/30" />
                   <div className="absolute inset-0 z-0 backdrop-blur-[1px]" />
 
-                  {/* Header: Title & Link */}
+                  {/* Header: Title & Action */}
                   <div className="relative z-10">
                     <div className="flex items-start justify-between gap-3 mb-1">
-                      <h3 className="font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white leading-snug">
+                      <h3 className="font-extrabold text-lg sm:text-xl text-white leading-snug">
                         {project.name}
                       </h3>
-                      {project.link ? (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="w-8 h-8 rounded-lg bg-brand-cyan/15 hover:bg-brand-cyan/30 text-brand-cyan flex items-center justify-center shrink-0 border border-brand-cyan/30 transition-all"
+
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        {/* Nút phóng to chi tiết */}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedProject(project);
+                            setCenterIndex(index);
+                          }}
+                          title={t("projects_list.modal_zoom_title", "Phóng to xem chi tiết")}
+                          className="w-8 h-8 rounded-lg bg-white/15 hover:bg-cyan-400 hover:text-slate-950 text-white flex items-center justify-center border border-white/20 transition-all cursor-pointer"
                         >
-                          <i className="ph-bold ph-arrow-up-right text-base"></i>
-                        </a>
-                      ) : (
-                        <div className="w-8 h-8 rounded-lg bg-slate-200/50 dark:bg-white/10 text-slate-500 dark:text-slate-400 flex items-center justify-center shrink-0">
-                          <i className="ph-bold ph-folder text-base"></i>
-                        </div>
-                      )}
+                          <i className="ph-bold ph-arrows-out-simple text-base"></i>
+                        </button>
+
+                        {/* Nút mở link trực tiếp (nếu có) */}
+                        {project.link ? (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="w-8 h-8 rounded-lg bg-white/15 hover:bg-cyan-400 text-white hover:text-slate-950 flex items-center justify-center border border-white/20 transition-all"
+                          >
+                            <i className="ph-bold ph-arrow-up-right text-base"></i>
+                          </a>
+                        ) : (
+                          <div className="w-8 h-8 rounded-lg bg-white/10 text-slate-400 flex items-center justify-center">
+                            <i className="ph-bold ph-folder text-base"></i>
+                          </div>
+                        )}
+                      </div>
                     </div>
 
-                    <p className="text-xs sm:text-sm font-mono text-brand-cyan font-semibold">
-                      {project.role}
+                    <p className="text-xs sm:text-sm font-mono text-white/95 font-semibold">
+                      {t(`projects_list.${project.id}.role`, project.role)}
                     </p>
                   </div>
 
-                  {/* Body: Description */}
+                  {/* Body: Description (Rút gọn trên card) */}
                   <div className="relative z-10 my-auto py-2">
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-4">
-                      {project.description}
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-4">
+                      {t(`projects_list.${project.id}.description`, project.description)}
                     </p>
+                    {isCenter && (
+                      <span className="inline-flex items-center gap-1 text-[11px] text-cyan-300 mt-1.5 font-medium underline underline-offset-2">
+                        {t("projects_list.click_to_view", "Nhấn để xem đầy đủ")}{" "}
+                        <i className="ph-bold ph-arrow-right"></i>
+                      </span>
+                    )}
                   </div>
 
                   {/* Footer: Tech Badges */}
-                  <div className="relative z-10 pt-3 border-t border-slate-200/60 dark:border-white/10">
+                  <div className="relative z-10 pt-3 border-t border-white/15">
                     <div className="flex flex-wrap gap-1.5">
                       {project.techStack.map((tech, idx) => (
                         <SkillBadge
                           key={idx}
                           skill={tech}
-                          className="text-[11px] py-0.5 px-2"
+                          className="text-[11px] py-0.5 px-2 bg-white/10 text-slate-200 border-white/15"
                         />
                       ))}
                     </div>
@@ -477,6 +543,132 @@ export default function CardFanCarousel({ projects }: CardFanCarouselProps) {
           </button>
         </div>
       )}
+
+      {/* ======================================================== */}
+      {/* MODAL PHÓNG TO XEM ĐẦY ĐỦ NỘI DUNG DỰ ÁN (EXPANDED MODAL) */}
+      {/* ======================================================== */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 sm:p-6"
+            onClick={() => setSelectedProject(null)}
+          >
+            {/* Modal Dialog Card */}
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.85, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-2xl max-h-[90vh] bg-slate-900 border border-white/20 rounded-3xl shadow-2xl overflow-hidden flex flex-col text-white"
+            >
+              {/* Nút Đóng Modal */}
+              <button
+                type="button"
+                onClick={() => setSelectedProject(null)}
+                aria-label="Close dialog"
+                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
+              >
+                <i className="ph-bold ph-x text-lg"></i>
+              </button>
+
+              {/* Nút Previous & Next trong Modal */}
+              <button
+                type="button"
+                onClick={openPrevModal}
+                aria-label="Previous project in modal"
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-cyan-400 hover:text-slate-950 border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
+              >
+                <i className="ph-bold ph-caret-left text-lg"></i>
+              </button>
+              <button
+                type="button"
+                onClick={openNextModal}
+                aria-label="Next project in modal"
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/60 hover:bg-cyan-400 hover:text-slate-950 border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
+              >
+                <i className="ph-bold ph-caret-right text-lg"></i>
+              </button>
+
+              {/* Header Image Header (Ảnh to rõ ràng) */}
+              <div className="relative w-full h-48 sm:h-64 shrink-0 overflow-hidden bg-slate-950">
+                {selectedProject.image ? (
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-slate-800 text-slate-500">
+                    <i className="ph-bold ph-image text-5xl"></i>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
+
+                {/* Badge Role trên ảnh */}
+                <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-white/15 border border-white/25 text-white backdrop-blur-md">
+                    {t(`projects_list.${selectedProject.id}.role`, selectedProject.role)}
+                  </span>
+                </div>
+              </div>
+
+              {/* Nội dung chi tiết đầy đủ 100% */}
+              <div className="p-6 sm:p-8 overflow-y-auto space-y-5 no-scrollbar">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                    {selectedProject.name}
+                  </h3>
+                </div>
+
+                {/* Toàn bộ mô tả dự án không bị cắt */}
+                <div className="space-y-2">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
+                    {t("projects_list.modal_desc_title", "Mô tả dự án & Trách nhiệm thực hiện")}
+                  </h4>
+                  <p className="text-sm sm:text-base text-slate-200 leading-relaxed whitespace-pre-line">
+                    {t(`projects_list.${selectedProject.id}.description`, selectedProject.description)}
+                  </p>
+                </div>
+
+                {/* Toàn bộ Tech Stack */}
+                <div className="space-y-2.5 pt-2 border-t border-white/10">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
+                    {t("projects_list.modal_tech_title", "Công nghệ sử dụng (Tech Stack)")}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.techStack.map((tech, idx) => (
+                      <SkillBadge
+                        key={idx}
+                        skill={tech}
+                        className="text-xs py-1 px-3 bg-cyan-500/15 text-cyan-200 border-cyan-500/30"
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Nút truy cập dự án / Demo */}
+                {selectedProject.link && (
+                  <div className="pt-4 flex justify-end">
+                    <a
+                      href={selectedProject.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-cyan-400/25"
+                    >
+                      <span>{t("projects_list.modal_view_site", "Xem trang web dự án")}</span>
+                      <i className="ph-bold ph-arrow-up-right text-base"></i>
+                    </a>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
