@@ -47,7 +47,7 @@ export default function HeroSection() {
           </a>
         </LiquidButton>
         <LiquidButton asChild className="text-black dark:text-slate-200 font-bold">
-          <a href="/Huynh-Gia-Bao-CV.pdf" download="Huynh-Gia-Bao-Backend.pdf" className="flex items-center gap-2">
+          <a href={`${import.meta.env.BASE_URL}Huynh-Gia-Bao-CV.pdf`} download="Huynh-Gia-Bao-Backend.pdf" className="flex items-center gap-2">
             <span>{t('hero.download_cv')}</span>
             <i className="ph-bold ph-download-simple"></i>
           </a>
